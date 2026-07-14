@@ -105,19 +105,12 @@ function AboutSuresh() {
             <h1>Teaching with<br /><em>attention.</em></h1>
             <p className="about-suresh-lead">Suresh is a yoga instructor with more than two decades of experience helping students build strength, steadiness and awareness through consistent practice.</p>
             <p>His classes bring together classical postures, breathwork and meditation in a way that is clear, respectful and grounded in everyday life. He believes progress begins by understanding the person—not by forcing the pose.</p>
-            <a className="primary-button" href="#contact">Begin your practice <Arrow /></a>
-          </div>
-        </section>
-        <section className="about-suresh-story">
-          <div className="about-story-heading">
-            <p className="eyebrow">A practice shaped over time</p>
-            <h2>Experience made<br /><em>human.</em></h2>
-          </div>
-          <div className="about-story-cards">
-            <article><span>/01</span><h3>Two decades of teaching</h3><p>More than 20 years of personal practice and instruction have shaped a calm, observant approach to working with students at different stages.</p></article>
-            <article><span>/02</span><h3>Clarity before complexity</h3><p>Postures and breath practices are explained in practical language, with attention to purpose, alignment and sustainable progress.</p></article>
-            <article><span>/03</span><h3>Every body is different</h3><p>Guidance is adapted thoughtfully, creating space for beginners, experienced practitioners and people returning to movement.</p></article>
-            <article><span>/04</span><h3>Beyond the mat</h3><p>The aim is not performance. It is a steadier body, a quieter mind and habits of awareness that continue into daily life.</p></article>
+            <div className="about-suresh-highlights" aria-label="Instructor teaching highlights">
+              <span>Structured sessions</span>
+              <span>Personal posture guidance</span>
+              <span>Breathwork & meditation</span>
+            </div>
+            <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
         </section>
       </main>
@@ -228,7 +221,27 @@ export function App() {
             <img src="/assets/yoga-teacher-hero.png" alt="Yoga teacher seated in a calm, sunlit studio" />
             <div className="hero-note"><span>01</span> Breath<br />Movement<br />Stillness</div>
           </div>
-          <a className="scroll-note" href="#instructor">Scroll to discover</a>
+          <a className="scroll-note" href="#programs">Scroll to discover</a>
+        </section>
+
+        <section className="programs" id="programs">
+          <div className="section-heading" data-reveal>
+            <p className="eyebrow">Ways to practise</p>
+            <h2>A practice for<br /><em>every season.</em></h2>
+          </div>
+          <div className="program-list" data-reveal data-reveal-delay="1">
+            {programs.map((program) => (
+              <article className="program-card" key={program.no}>
+                <span className="program-number">{program.no}</span>
+                <div>
+                  <h3>{program.title}</h3>
+                  <p>{program.text}</p>
+                </div>
+                <p className="program-meta">{program.meta}</p>
+                <a href="#contact" aria-label={`Enquire about ${program.title}`}><Arrow /></a>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="instructor" id="instructor">
@@ -250,23 +263,17 @@ export function App() {
           </div>
         </section>
 
-        <section className="programs" id="programs">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Ways to practise</p>
-            <h2>A practice for<br /><em>every season.</em></h2>
+        <section className="about-suresh-story home-teaching-approach" id="teaching-approach">
+          <div className="about-story-heading">
+            <p className="eyebrow">How Suresh teaches</p>
+            <h2>Care in every<br /><em>detail.</em></h2>
+            <p className="about-story-source">These teaching qualities are drawn from a long-term student’s statement of experience with Suresh’s Yogalaya.</p>
           </div>
-          <div className="program-list" data-reveal data-reveal-delay="1">
-            {programs.map((program) => (
-              <article className="program-card" key={program.no}>
-                <span className="program-number">{program.no}</span>
-                <div>
-                  <h3>{program.title}</h3>
-                  <p>{program.text}</p>
-                </div>
-                <p className="program-meta">{program.meta}</p>
-                <a href="#contact" aria-label={`Enquire about ${program.title}`}><Arrow /></a>
-              </article>
-            ))}
+          <div className="about-story-cards">
+            <article><span>/01</span><h3>Structured, disciplined sessions</h3><p>Classes follow a considered sequence: preparatory stretches, carefully demonstrated asanas, breathing techniques, relaxation and meditation.</p></article>
+            <article><span>/02</span><h3>Personal attention</h3><p>Suresh and his team observe each participant closely, correct posture and suggest modifications so students can practise with confidence.</p></article>
+            <article><span>/03</span><h3>Principles, benefits and precautions</h3><p>Teaching goes beyond demonstrating poses. Students are helped to understand why a practice is done, its intended benefits and the precautions that support safe, effective movement.</p></article>
+            <article><span>/04</span><h3>A holistic approach</h3><p>Traditional yoga, breathwork and meditation are brought together to support strength, flexibility, calm, clarity and balance in everyday life.</p></article>
           </div>
         </section>
 

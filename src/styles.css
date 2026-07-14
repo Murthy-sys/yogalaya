@@ -101,10 +101,13 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .about-suresh-intro h1 { margin: 0; color: var(--ink); font-size: clamp(62px, 6.5vw, 104px); line-height: .96; letter-spacing: -.045em; }
 .about-suresh-lead { max-width: 690px; margin: 42px 0 22px; color: var(--ink); font-family: "Marcellus", serif; font-size: clamp(23px, 2.2vw, 33px); line-height: 1.5; }
 .about-suresh-intro > p:not(.eyebrow):not(.about-suresh-lead) { max-width: 620px; margin: 0 0 38px; color: #60716d; line-height: 1.9; }
+.about-suresh-highlights { width: 100%; max-width: 620px; margin: 0 0 38px; border-top: 1px solid var(--line); }
+.about-suresh-highlights span { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 600; }
 .about-suresh-story { padding: clamp(100px, 11vw, 165px) 8vw; display: grid; grid-template-columns: 36% 64%; gap: 8%; background: var(--ink); color: white; }
 .about-story-heading { position: sticky; top: 110px; align-self: start; }
 .about-story-heading .eyebrow { color: #afc0b8; }
 .about-story-heading h2 { margin: 0; font-size: clamp(48px, 5vw, 76px); line-height: 1.06; letter-spacing: -.035em; }
+.about-story-source { max-width: 360px; margin: 32px 0 0; color: #aebdb8; font-size: 13px; line-height: 1.8; }
 .about-story-cards { display: grid; gap: 16px; }
 .about-story-cards article { padding: 35px 38px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.035); transition: transform .4s cubic-bezier(.22,1,.36,1), background .35s ease; }
 .about-story-cards article:nth-child(even) { margin-left: 7%; }
