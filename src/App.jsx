@@ -41,29 +41,54 @@ Therefore, it is my considered opinion, based on personal experience, that Sures
     featured: true,
   },
   {
-    quote: "The practice is simple, deeply attentive and never rushed. I leave every class feeling lighter and more at home in my body.",
-    name: "Meera R.",
-    detail: "Practising since 2023",
+    quote: "Experiencing something new in my life. First of all, I thought of a Gym for bodybuilding but with a thought that being mentally strong is more important than physical fitness in the upcoming materialistic life I thought of joining the Yoga Institute. But here I got to know that we will experience both Physical fitness and Mental fitness with Yoga. The Institute will do 100% justification for this.",
+    name: "Sai Teja K",
+    detail: "29 July 2018",
   },
   {
-    quote: "Suresh sir explains the purpose behind every movement. That understanding changed yoga from exercise into a daily way of living.",
-    name: "Arun K.",
-    detail: "Weekend batch",
+    quote: "This is Rajasekhar, What Purpose your decided to join yoga classes, For your weight loss, stress relief, peacefulness, stability in life... Etc.. Here Suresh sir and Gayatri Mam will treat you as a kid and they will explain you clearly about yoga... Coming to my Experience 1. Yoga improved my Flexibility 2. Improved my mental health, boost immunity, reduced anxiety, improved my strength.. Etc. Finally yoga will make you mentally and physically fit...... I have faced so many Experiences in a short time. In my experiences mostly i liked one Word ‘CONTROL’..... If you don't have CONTROL on proper diet and sleep you will facing weight gain or weight loss problems. If you don't have CONTROL on anger or stability or stress management you will face lot of problems mentally and Physically. If your mind in your control.. You will achieve whatever you like. I'm sharing my experiences here due to it will helpful to few people atleast. Thank you very much to Suresh sir and Gayatri Mam you both made me Blissful.",
+    name: "Kondreddy Rajasekhar Reddy",
+    detail: "7 October 2022",
   },
   {
-    quote: "I joined with stiffness and hesitation. The patient corrections and steady pace helped me feel stronger without ever feeling pushed.",
-    name: "Lakshmi P.",
-    detail: "Foundations student",
+    quote: "I'm Hemanth, software engineer at Cognizant Technology Solutions. Doing yoga is quite a good experience. ‘Suresh Yoga Laya’ followed a systematic procedure, they introduce asanas based on our body flexibility. They explain importance of each and every asana. For me I felt good waking up early in the morning and making my body flexible. On Fridays we have a special two-hour session, Suresh sir will teach us about importance of yoga. Yoga is essential for our daily lives. I strongly suggest everyone to join Suresh Yoga Laya.",
+    name: "User (Hemanth)",
+    detail: "24 September 2022",
   },
   {
-    quote: "The breathing practices have become part of my mornings. I feel calmer at work and much more aware of how I carry stress.",
-    name: "Ravi Teja",
-    detail: "Pranayama practice",
+    quote: "Yogalay is the right place to tune your body mind and spirit in to one. Suresh is a great soul and he helps the students with a great motivation to learn. He is very honest teacher. I am very happy that I joined the class.",
+    name: "Rajeswari M",
+    detail: "12 April 2019",
   },
   {
-    quote: "Every session feels personal, even in a group. Suresh notices the small things and explains adjustments in a way that makes sense.",
-    name: "Anusha M.",
-    detail: "Regular practitioner",
+    quote: "Balancing your mind and focus is very important for competitive exams here you can learn with best trainer, you can feel the difference with in a week.",
+    name: "Akhil",
+    detail: "9 March 2019",
+  },
+  {
+    quote: "Truly transforming lives, it puts in lot of energy and consciousness into life, trains minds to master its own potential through sadhana (practice). Saliently, the guru (teacher) is so well versed with yoga that his teachings fructify the practice. Outdo your own infirmity. Learn, test and train yourself. P.S. — apt premises to perform yoga. The teacher also preaches a tinge of spirituality. Live life up to its full potential.",
+    name: "Renuka Prasad",
+    detail: "30 January 2019",
+  },
+  {
+    quote: "This is the fantastic institute to learn yoga this institute gives 100% justification very good and polite teaching. I am completely satisfied for learning yoga in this best institute. Thank you.",
+    name: "Trilokya",
+    detail: "20 September 2018",
+  },
+  {
+    quote: "Finally, my quest for a qualitative yoga training center ended after finding Yogalaya. Perfect place for the people who are passionate towards learning yoga.",
+    name: "Archana Devi",
+    detail: "26 July 2018",
+  },
+  {
+    quote: "Everything about The Yogalaya Studio is worth experiencing! Fantastic instructor. The wide variety of classes offered. The healing, relaxing and energizing benefits of yoga practice. The warm and welcoming space of the studio itself.",
+    name: "Revathi",
+    detail: "5 June 2018",
+  },
+  {
+    quote: "This a awesome place for training yoga's... Start your yoga career in this place... great master and good atmosphere.",
+    name: "Jeevan Kumar",
+    detail: "11 May 2018",
   },
 ];
 
@@ -100,6 +125,7 @@ const faqs = [
 ];
 
 const whatsappUrl = "https://wa.me/919000382815?text=Namaste%2C%20I%27d%20like%20to%20know%20more%20about%20classes%20at%20Suresh%27s%20Yogalaya.";
+const justdialReviewsUrl = "https://www.justdial.com/Anantapur/Suresh-S-Yogalaya-Mee-Seva-Road-Opposite-To-Meeseva-Office-Walkable-Distance-From-Ramnagar-Subway-Ramnagar/9999P8554-8554-180322172514-Q6C5_BZDET";
 
 function Arrow() {
   return <span aria-hidden="true" className="button-arrow">→</span>;
@@ -146,6 +172,7 @@ export function App() {
   const [footerVisible, setFooterVisible] = useState(false);
   const [route, setRoute] = useState(() => window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
   const footerRef = useRef(null);
+  const reviewTouchStart = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -195,6 +222,17 @@ export function App() {
   }, [route]);
 
   const closeMenu = () => setMenuOpen(false);
+  const selectReview = (index) => {
+    setReviewExpanded(false);
+    setTestimonial(Math.max(0, Math.min(testimonials.length - 1, index)));
+  };
+  const handleReviewTouchEnd = (event) => {
+    if (reviewTouchStart.current === null) return;
+    const distance = event.changedTouches[0].clientX - reviewTouchStart.current;
+    reviewTouchStart.current = null;
+    if (Math.abs(distance) < 46) return;
+    selectReview(testimonial + (distance < 0 ? 1 : -1));
+  };
 
   if (route === "about-suresh") return <AboutSuresh />;
 
@@ -329,17 +367,15 @@ export function App() {
           <div className="review-stage">
             {testimonials[testimonial].featured && <span className="featured-review-label">Featured review</span>}
             <span className="review-mark" aria-hidden="true">“</span>
-            <blockquote className={testimonials[testimonial].featured ? (reviewExpanded ? "is-expanded" : "is-clamped") : ""} key={testimonial}>{testimonials[testimonial].quote}</blockquote>
-            {testimonials[testimonial].featured && (
-              <button
-                className="review-read-more"
-                type="button"
-                onClick={() => setReviewExpanded((expanded) => !expanded)}
-                aria-expanded={reviewExpanded}
-              >
-                {reviewExpanded ? "Show less" : "Read more"}
-              </button>
-            )}
+            <blockquote className={reviewExpanded ? "is-expanded" : "is-clamped"} key={testimonial}>{testimonials[testimonial].quote}</blockquote>
+            <button
+              className="review-read-more"
+              type="button"
+              onClick={() => setReviewExpanded((expanded) => !expanded)}
+              aria-expanded={reviewExpanded}
+            >
+              {reviewExpanded ? "Show less" : "Read full review"}
+            </button>
             <div className="review-person" key={`person-${testimonial}`}><strong>{testimonials[testimonial].name}</strong><span>{testimonials[testimonial].detail}</span></div>
             <div className="review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div>
             <div className="testimonial-controls">
@@ -347,6 +383,7 @@ export function App() {
               <span>{String(testimonial + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
               <button onClick={() => { setReviewExpanded(false); setTestimonial((testimonial + 1) % testimonials.length); }} aria-label="Next review">→</button>
             </div>
+            <a className="all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews on Justdial <Arrow /></a>
           </div>
           <div className="review-directory" aria-label="Choose a review">
             {testimonials.map((review, index) => (
@@ -354,6 +391,45 @@ export function App() {
                 <span>{String(index + 1).padStart(2, "0")}</span><strong>{review.name}</strong><small>{review.detail}</small>
               </button>
             ))}
+          </div>
+          <div className="mobile-reviews" aria-label="Student reviews carousel">
+            <div
+              className="mobile-review-viewport"
+              onTouchStart={(event) => { reviewTouchStart.current = event.touches[0].clientX; }}
+              onTouchEnd={handleReviewTouchEnd}
+            >
+              <div className="mobile-review-track" style={{ "--mobile-review-index": testimonial }}>
+                {testimonials.map((review, index) => {
+                  const active = testimonial === index;
+                  return (
+                    <article className={`mobile-review-card ${active ? "is-active" : ""}`} key={`mobile-${review.name}`} aria-hidden={!active}>
+                      <div className="mobile-review-card-top">
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        {review.featured && <small>Featured review</small>}
+                      </div>
+                      <span className="mobile-review-mark" aria-hidden="true">“</span>
+                      <blockquote className={active && reviewExpanded ? "is-expanded" : "is-clamped"}>{review.quote}</blockquote>
+                      {active && (
+                        <button className="mobile-review-more" type="button" onClick={() => setReviewExpanded((expanded) => !expanded)} aria-expanded={reviewExpanded}>
+                          {reviewExpanded ? "Show less" : "Read full review"}
+                        </button>
+                      )}
+                      <footer className="mobile-review-author">
+                        <strong>{review.name}</strong>
+                        <span>{review.detail}</span>
+                      </footer>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="mobile-review-controls">
+              <button type="button" onClick={() => selectReview(testimonial - 1)} disabled={testimonial === 0} aria-label="Previous review">←</button>
+              <div className="mobile-review-count"><strong>{String(testimonial + 1).padStart(2, "0")}</strong><span>/ {String(testimonials.length).padStart(2, "0")}</span></div>
+              <button type="button" onClick={() => selectReview(testimonial + 1)} disabled={testimonial === testimonials.length - 1} aria-label="Next review">→</button>
+            </div>
+            <div className="mobile-review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div>
+            <a className="mobile-all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews on Justdial <Arrow /></a>
           </div>
         </section>
 
