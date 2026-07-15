@@ -36,3 +36,4 @@ When implementing from a selected generated mock, treat that image as the source
 - On a full page load or refresh, disable browser scroll restoration and start the current route at the top.
 - Every route change must synchronously reset to the top inside the route transition; instructor portraits and copy use scroll-triggered mobile reveals on the About route.
 - On mobile, defer below-the-fold section rendering with `content-visibility` and intrinsic-size placeholders; lazy-load and asynchronously decode non-critical imagery while keeping above-the-fold hero imagery eager.
+- Keep the displayed brand logo close to its rendered resolution and serve the hero photograph as a quality-balanced compressed JPEG to avoid Lighthouse oversized-image and inefficient-image-delivery warnings.
