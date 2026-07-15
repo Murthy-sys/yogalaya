@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 
 const programs = [
   {
@@ -202,11 +203,11 @@ function AboutSuresh() {
     <div className="about-suresh-page">
       <main>
         <section className="about-suresh-hero instructor-profile instructor-profile-suresh">
-          <div className="about-suresh-portrait instructor-portrait">
+          <div className="about-suresh-portrait instructor-portrait" data-reveal>
             <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" />
             <div><strong>20+</strong><span>Years devoted to<br />practice & teaching</span></div>
           </div>
-          <div className="about-suresh-intro instructor-profile-copy">
+          <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">Instructor 01</p>
             <h1><em>Suresh.</em></h1>
             <p className="about-suresh-lead">Suresh is a yoga instructor with more than two decades of experience helping students build strength, steadiness and awareness through consistent practice.</p>
@@ -220,7 +221,7 @@ function AboutSuresh() {
           </div>
         </section>
         <section className="about-suresh-hero instructor-profile instructor-profile-gayatri">
-          <div className="about-suresh-intro instructor-profile-copy">
+          <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">Instructor 02</p>
             <h1>Gayatri<br /><em>Keerti.</em></h1>
             <p className="about-suresh-lead">Gayatri Keerti is a yoga instructor at Suresh’s Yogalaya and an integral part of the studio’s teaching team.</p>
@@ -232,7 +233,7 @@ function AboutSuresh() {
             </div>
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
-          <div className="about-suresh-portrait instructor-portrait">
+          <div className="about-suresh-portrait instructor-portrait" data-reveal>
             <img src="/assets/gayatri-keerti-profile.jpeg" alt="Yoga instructor Gayatri Keerti at an International Yoga Day event" />
             <div className="instructor-role-badge"><span>Yoga instructor<br />Suresh’s Yogalaya</span></div>
           </div>
@@ -258,7 +259,7 @@ export function App() {
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -269,7 +270,11 @@ export function App() {
 
   useEffect(() => {
     const onRouteChange = () => {
-      const updateRoute = () => setRoute(window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
+      const nextRoute = window.location.hash === "#/about-suresh" ? "about-suresh" : "home";
+      const updateRoute = () => {
+        flushSync(() => setRoute(nextRoute));
+        window.scrollTo(0, 0);
+      };
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (document.startViewTransition && !reduceMotion) document.startViewTransition(updateRoute);
       else updateRoute();

@@ -34,3 +34,4 @@ When implementing from a selected generated mock, treat that image as the source
 - Mobile review cards use a structured flex layout with restrained quote typography, four-line previews, an in-flow read toggle, and a non-overlapping author footer.
 - The mobile review carousel should feel premium and gesture-responsive: cards follow the finger, settle with spring physics, use restrained 3D depth, and feature layered translucent editorial surfaces with active-edge lighting.
 - On a full page load or refresh, disable browser scroll restoration and start the current route at the top.
+- Every route change must synchronously reset to the top inside the route transition; instructor portraits and copy use scroll-triggered mobile reveals on the About route.
