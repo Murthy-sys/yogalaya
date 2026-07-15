@@ -29,3 +29,6 @@ When implementing from a selected generated mock, treat that image as the source
 - On mobile, present reviews as a centered swipeable card slider with blurred adjacent cards and polished depth transitions; keep the editorial directory layout on desktop.
 - The About Suresh route presents two separate instructor profiles: Suresh first and Gayatri Keerti second, using their supplied International Yoga Day photographs.
 - Use the same shared header navigation, mobile menu, floating WhatsApp action, and full footer on every site route.
+- Treat mobile as the primary experience: favor smooth spring-like, GPU-friendly transitions, progressive view/scroll animation enhancements, responsive touch feedback, and full reduced-motion support.
+- Keep the mobile review section compact, with readable five-line previews and prominent navigation controls directly beneath the cards.
+- Mobile review cards use a structured flex layout with restrained quote typography, four-line previews, an in-flow read toggle, and a non-overlapping author footer.

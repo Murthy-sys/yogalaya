@@ -261,7 +261,12 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    const onRouteChange = () => setRoute(window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
+    const onRouteChange = () => {
+      const updateRoute = () => setRoute(window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (document.startViewTransition && !reduceMotion) document.startViewTransition(updateRoute);
+      else updateRoute();
+    };
     window.addEventListener("hashchange", onRouteChange);
     return () => window.removeEventListener("hashchange", onRouteChange);
   }, []);
