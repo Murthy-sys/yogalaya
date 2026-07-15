@@ -131,22 +131,84 @@ function Arrow() {
   return <span aria-hidden="true" className="button-arrow">→</span>;
 }
 
+function SiteNavigation({ menuOpen, scrolled, onMenuToggle, onNavigate }) {
+  const links = [['Instructors', 'instructor'], ['Programs', 'programs'], ['Workshops', 'workshops'], ['Contact', 'contact']];
+  return (
+    <>
+      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+        <a className="brand" href="#home" onClick={onNavigate} aria-label="Suresh's Yogalaya home">
+          <img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" />
+        </a>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {links.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
+        </nav>
+        <a className="header-cta" href="#contact">Book a class</a>
+        <button className={`menu-toggle ${menuOpen ? "open" : ""}`} onClick={onMenuToggle} aria-label="Toggle navigation" aria-expanded={menuOpen}>
+          <span></span><span></span>
+        </button>
+      </header>
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`} aria-hidden={!menuOpen}>
+        <nav>
+          {links.map(([label, id]) => <a key={id} href={`#${id}`} onClick={onNavigate}>{label}</a>)}
+        </nav>
+        <p>Health begins with attention.</p>
+      </div>
+    </>
+  );
+}
+
+function FloatingWhatsApp({ hidden }) {
+  return (
+    <a className={`whatsapp-link ${hidden ? "is-hidden" : ""}`} href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Chat with Suresh's Yogalaya on WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.4 28.6l6.4-1.7A12.7 12.7 0 1 0 16 3.2Zm0 22.9c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.8 1 1-3.7-.2-.4A10.2 10.2 0 1 1 16 26.1Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.3 8.3 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4Z" /></svg>
+    </a>
+  );
+}
+
+function SiteFooter({ footerRef }) {
+  return (
+    <footer ref={footerRef}>
+      <div className="footer-intro">
+        <a className="footer-brand" href="#home"><img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" /></a>
+        <p>A place for Health and self Transformation.</p>
+      </div>
+      <div className="footer-col">
+        <h3>Explore</h3>
+        <a href="#instructor">Instructors</a><a href="#programs">Programs</a><a href="#workshops">Workshops</a><a href="#faq">FAQs</a>
+      </div>
+      <div className="footer-col">
+        <h3>Visit</h3>
+        <p>MeeSeva Road, Ramnagar<br />Opposite MeeSeva office<br />Anantapur, AP 515004</p>
+        <a href="https://maps.app.goo.gl/3gdoCaoVG5oW6FWSA?g_st=awb" target="_blank" rel="noreferrer">Get directions ↗</a>
+      </div>
+      <div className="footer-col footer-connect">
+        <h3>Connect</h3>
+        <a href={whatsappUrl} target="_blank" rel="noreferrer">+91 90003 82815</a>
+        <div className="social-links">
+          <a href="https://www.instagram.com/sureshesapathi?igsh=bzJueWQwNGJtZjZ2" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="social-dot"/></svg></a>
+          <a href="https://youtube.com/@bruceleesuresh?si=euIyGGvrdOe0eABN" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8Z"/><path d="m10 15.4 5-3.4-5-3.4v6.8Z" className="social-play"/></svg></a>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>© 2026 Suresh’s Yogalaya</span><span>Health · Awareness · Transformation</span>
+        <a className="developer-credit" href="https://www.trimugo.in" target="_blank" rel="noreferrer" aria-label="Website developed by Trimugo"><span>Developed by</span><img src="/assets/trimugo-logo.png" alt="Trimugo — Smart Solutions. Real Results." /></a>
+      </div>
+    </footer>
+  );
+}
+
 function AboutSuresh() {
   return (
     <div className="about-suresh-page">
-      <header className="about-suresh-header">
-        <a className="brand" href="#home" aria-label="Return to Suresh's Yogalaya home"><img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" /></a>
-        <a className="about-back-link" href="#instructor">← Back to Yogalaya</a>
-      </header>
       <main>
-        <section className="about-suresh-hero">
-          <div className="about-suresh-portrait">
-            <img src="/assets/suresh-instructor.jpg" alt="Suresh seated in meditation" />
+        <section className="about-suresh-hero instructor-profile instructor-profile-suresh">
+          <div className="about-suresh-portrait instructor-portrait">
+            <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" />
             <div><strong>20+</strong><span>Years devoted to<br />practice & teaching</span></div>
           </div>
-          <div className="about-suresh-intro">
-            <p className="eyebrow">The teacher behind Yogalaya</p>
-            <h1>Teaching with<br /><em>attention.</em></h1>
+          <div className="about-suresh-intro instructor-profile-copy">
+            <p className="eyebrow">Instructor 01</p>
+            <h1><em>Suresh.</em></h1>
             <p className="about-suresh-lead">Suresh is a yoga instructor with more than two decades of experience helping students build strength, steadiness and awareness through consistent practice.</p>
             <p>His classes bring together classical postures, breathwork and meditation in a way that is clear, respectful and grounded in everyday life. He believes progress begins by understanding the person—not by forcing the pose.</p>
             <div className="about-suresh-highlights" aria-label="Instructor teaching highlights">
@@ -155,6 +217,24 @@ function AboutSuresh() {
               <span>Breathwork & meditation</span>
             </div>
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
+          </div>
+        </section>
+        <section className="about-suresh-hero instructor-profile instructor-profile-gayatri">
+          <div className="about-suresh-intro instructor-profile-copy">
+            <p className="eyebrow">Instructor 02</p>
+            <h1>Gayatri<br /><em>Keerti.</em></h1>
+            <p className="about-suresh-lead">Gayatri Keerti is a yoga instructor at Suresh’s Yogalaya and an integral part of the studio’s teaching team.</p>
+            <p>She works alongside Suresh in creating a welcoming space where students can approach yoga with attention, consistency and care.</p>
+            <div className="about-suresh-highlights" aria-label="Gayatri Keerti teaching highlights">
+              <span>Yoga instruction</span>
+              <span>Attentive student guidance</span>
+              <span>Part of the Yogalaya teaching team</span>
+            </div>
+            <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
+          </div>
+          <div className="about-suresh-portrait instructor-portrait">
+            <img src="/assets/gayatri-keerti-profile.jpeg" alt="Yoga instructor Gayatri Keerti at an International Yoga Day event" />
+            <div className="instructor-role-badge"><span>Yoga instructor<br />Suresh’s Yogalaya</span></div>
           </div>
         </section>
       </main>
@@ -234,34 +314,20 @@ export function App() {
     selectReview(testimonial + (distance < 0 ? 1 : -1));
   };
 
-  if (route === "about-suresh") return <AboutSuresh />;
+  if (route === "about-suresh") {
+    return (
+      <div className="site-shell">
+        <SiteNavigation menuOpen={menuOpen} scrolled={scrolled} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={closeMenu} />
+        <AboutSuresh />
+        <FloatingWhatsApp hidden={footerVisible} />
+        <SiteFooter footerRef={footerRef} />
+      </div>
+    );
+  }
 
   return (
     <div className="site-shell">
-      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-        <a className="brand" href="#home" onClick={closeMenu} aria-label="Suresh's Yogalaya home">
-          <img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" />
-        </a>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#instructor">Instructor</a>
-          <a href="#programs">Programs</a>
-          <a href="#workshops">Workshops</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a className="header-cta" href="#contact">Book a class</a>
-        <button className={`menu-toggle ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
-          <span></span><span></span>
-        </button>
-      </header>
-
-      <div className={`mobile-menu ${menuOpen ? "open" : ""}`} aria-hidden={!menuOpen}>
-        <nav>
-          {[['Instructor', 'instructor'], ['Programs', 'programs'], ['Workshops', 'workshops'], ['Contact', 'contact']].map(([label, id]) => (
-            <a key={id} href={`#${id}`} onClick={closeMenu}>{label}</a>
-          ))}
-        </nav>
-        <p>Health begins with attention.</p>
-      </div>
+      <SiteNavigation menuOpen={menuOpen} scrolled={scrolled} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={closeMenu} />
 
       <main>
         <section className="hero" id="home">
@@ -494,52 +560,8 @@ export function App() {
         </section>
       </main>
 
-      <a
-        className={`whatsapp-link ${footerVisible ? "is-hidden" : ""}`}
-        href={whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat with Suresh's Yogalaya on WhatsApp"
-      >
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.4 28.6l6.4-1.7A12.7 12.7 0 1 0 16 3.2Zm0 22.9c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.8 1 1-3.7-.2-.4A10.2 10.2 0 1 1 16 26.1Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.3 8.3 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4Z" />
-        </svg>
-      </a>
-
-      <footer ref={footerRef}>
-        <div className="footer-intro">
-          <a className="footer-brand" href="#home"><img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" /></a>
-          <p>A place for Health and self Transformation.</p>
-        </div>
-        <div className="footer-col">
-          <h3>Explore</h3>
-          <a href="#instructor">Instructor</a><a href="#programs">Programs</a><a href="#workshops">Workshops</a><a href="#faq">FAQs</a>
-        </div>
-        <div className="footer-col">
-          <h3>Visit</h3>
-          <p>MeeSeva Road, Ramnagar<br />Opposite MeeSeva office<br />Anantapur, AP 515004</p>
-          <a href="https://maps.app.goo.gl/3gdoCaoVG5oW6FWSA?g_st=awb" target="_blank" rel="noreferrer">Get directions ↗</a>
-        </div>
-        <div className="footer-col footer-connect">
-          <h3>Connect</h3>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">+91 90003 82815</a>
-          <div className="social-links">
-            <a href="https://www.instagram.com/sureshesapathi?igsh=bzJueWQwNGJtZjZ2" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="social-dot"/></svg>
-            </a>
-            <a href="https://youtube.com/@bruceleesuresh?si=euIyGGvrdOe0eABN" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on YouTube">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8Z"/><path d="m10 15.4 5-3.4-5-3.4v6.8Z" className="social-play"/></svg>
-            </a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 Suresh’s Yogalaya</span>
-          <span>Health · Awareness · Transformation</span>
-          <a className="developer-credit" href="https://www.trimugo.in" target="_blank" rel="noreferrer" aria-label="Website developed by Trimugo">
-            <span>Developed by</span><img src="/assets/trimugo-logo.png" alt="Trimugo — Smart Solutions. Real Results." />
-          </a>
-        </div>
-      </footer>
+      <FloatingWhatsApp hidden={footerVisible} />
+      <SiteFooter footerRef={footerRef} />
     </div>
   );
 }

@@ -27,3 +27,5 @@ When implementing from a selected generated mock, treat that image as the source
 - Use the actual top 10 reviews displayed on the Suresh S Yogalaya Justdial listing, and link the review card footer to that listing for all reviews.
 - Keep Parameswara Reddy M.'s full advocate testimonial as the featured default first review, followed by the 10 Justdial reviews without changing their order or content.
 - On mobile, present reviews as a centered swipeable card slider with blurred adjacent cards and polished depth transitions; keep the editorial directory layout on desktop.
+- The About Suresh route presents two separate instructor profiles: Suresh first and Gayatri Keerti second, using their supplied International Yoga Day photographs.
+- Use the same shared header navigation, mobile menu, floating WhatsApp action, and full footer on every site route.

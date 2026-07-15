@@ -88,7 +88,7 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .instructor-values h3 { margin: 0 0 5px; color: var(--ink); font-size: 18px; }
 .instructor-values p { margin: 0; color: #71817c; font-size: 12px; line-height: 1.6; }
 
-.about-suresh-page { min-height: 100vh; background: var(--cream); overflow: clip; }
+.about-suresh-page { min-height: 100vh; padding-top: 104px; background: var(--cream); overflow: clip; }
 .about-suresh-header { height: 104px; padding: 0 clamp(24px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(251,250,245,.94); }
 .about-back-link { color: var(--ink); text-decoration: none; text-transform: uppercase; letter-spacing: .14em; font-size: 9px; font-weight: 600; }
 .about-suresh-hero { display: grid; grid-template-columns: 46% 54%; min-height: calc(100svh - 104px); }
@@ -103,6 +103,13 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .about-suresh-intro > p:not(.eyebrow):not(.about-suresh-lead) { max-width: 620px; margin: 0 0 38px; color: #60716d; line-height: 1.9; }
 .about-suresh-highlights { width: 100%; max-width: 620px; margin: 0 0 38px; border-top: 1px solid var(--line); }
 .about-suresh-highlights span { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 600; }
+.instructor-profile { border-bottom: 1px solid var(--line); }
+.instructor-profile-gayatri { grid-template-columns: 54% 46%; background: var(--paper); }
+.instructor-profile-gayatri .about-suresh-intro { padding-left: 10vw; }
+.instructor-profile-suresh .instructor-portrait > img { object-position: 30% 74%; }
+.instructor-profile-gayatri .instructor-portrait > img { object-position: 48% 73%; }
+.instructor-role-badge { min-height: 86px; }
+.about-suresh-portrait > .instructor-role-badge span { padding-left: 0; border-left: 0; }
 .about-suresh-story { padding: clamp(100px, 11vw, 165px) 8vw; display: grid; grid-template-columns: 36% 64%; gap: 8%; background: var(--ink); color: white; }
 .about-story-heading { position: sticky; top: 110px; align-self: start; }
 .about-story-heading .eyebrow { color: #afc0b8; }
@@ -310,14 +317,20 @@ footer { background: var(--ink-deep); color: #d5dfdb; padding: 76px 8vw 28px; di
   .instructor-copy h2 { font-size: 56px; }
   .instructor-lead { margin-top: 30px; font-size: 24px; }
   .instructor-values { margin-top: 38px; }
+  .about-suresh-page { padding-top: 78px; }
   .about-suresh-header { height: 78px; padding: 0 18px; }
   .about-suresh-header .brand { width: 54px; height: 54px; }
   .about-back-link { font-size: 8px; }
   .about-suresh-hero { grid-template-columns: 1fr; min-height: 0; }
+  .instructor-profile-gayatri { display: flex; flex-direction: column; }
+  .instructor-profile-gayatri .instructor-portrait { order: -1; }
   .about-suresh-portrait { min-height: 75svh; }
+  .instructor-profile-suresh .instructor-portrait > img { object-position: 29% 76%; }
+  .instructor-profile-gayatri .instructor-portrait > img { object-position: 48% 75%; }
   .about-suresh-portrait > div { padding: 21px 23px; }
   .about-suresh-portrait strong { font-size: 42px; }
   .about-suresh-intro { padding: 82px 22px 92px; }
+  .instructor-profile-gayatri .about-suresh-intro { padding-left: 22px; }
   .about-suresh-intro h1 { font-size: clamp(58px, 17vw, 76px); }
   .about-suresh-lead { margin-top: 32px; font-size: 24px; }
   .about-suresh-story { padding: 85px 22px; }
