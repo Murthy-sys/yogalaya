@@ -32,3 +32,5 @@ When implementing from a selected generated mock, treat that image as the source
 - Treat mobile as the primary experience: favor smooth spring-like, GPU-friendly transitions, progressive view/scroll animation enhancements, responsive touch feedback, and full reduced-motion support.
 - Keep the mobile review section compact, with readable five-line previews and prominent navigation controls directly beneath the cards.
 - Mobile review cards use a structured flex layout with restrained quote typography, four-line previews, an in-flow read toggle, and a non-overlapping author footer.
+- The mobile review carousel should feel premium and gesture-responsive: cards follow the finger, settle with spring physics, use restrained 3D depth, and feature layered translucent editorial surfaces with active-edge lighting.
+- On a full page load or refresh, disable browser scroll restoration and start the current route at the top.

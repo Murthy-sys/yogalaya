@@ -247,12 +247,19 @@ export function App() {
   const [scrolled, setScrolled] = useState(false);
   const [testimonial, setTestimonial] = useState(0);
   const [reviewExpanded, setReviewExpanded] = useState(false);
+  const [reviewDragOffset, setReviewDragOffset] = useState(0);
+  const [reviewDragging, setReviewDragging] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [footerVisible, setFooterVisible] = useState(false);
   const [route, setRoute] = useState(() => window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
   const footerRef = useRef(null);
   const reviewTouchStart = useRef(null);
+
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -315,6 +322,8 @@ export function App() {
     if (reviewTouchStart.current === null) return;
     const distance = event.changedTouches[0].clientX - reviewTouchStart.current;
     reviewTouchStart.current = null;
+    setReviewDragging(false);
+    setReviewDragOffset(0);
     if (Math.abs(distance) < 46) return;
     selectReview(testimonial + (distance < 0 ? 1 : -1));
   };
@@ -466,14 +475,21 @@ export function App() {
           <div className="mobile-reviews" aria-label="Student reviews carousel">
             <div
               className="mobile-review-viewport"
-              onTouchStart={(event) => { reviewTouchStart.current = event.touches[0].clientX; }}
+              onTouchStart={(event) => { reviewTouchStart.current = event.touches[0].clientX; setReviewDragging(true); }}
+              onTouchMove={(event) => {
+                if (reviewTouchStart.current === null) return;
+                const offset = event.touches[0].clientX - reviewTouchStart.current;
+                const atBoundary = (testimonial === 0 && offset > 0) || (testimonial === testimonials.length - 1 && offset < 0);
+                setReviewDragOffset(Math.max(-110, Math.min(110, offset * (atBoundary ? .28 : 1))));
+              }}
               onTouchEnd={handleReviewTouchEnd}
+              onTouchCancel={() => { reviewTouchStart.current = null; setReviewDragging(false); setReviewDragOffset(0); }}
             >
-              <div className="mobile-review-track" style={{ "--mobile-review-index": testimonial }}>
+              <div className={`mobile-review-track ${reviewDragging ? "is-dragging" : ""}`} style={{ "--mobile-review-index": testimonial, "--mobile-review-drag": reviewDragOffset }}>
                 {testimonials.map((review, index) => {
                   const active = testimonial === index;
                   return (
-                    <article className={`mobile-review-card ${active ? "is-active" : ""}`} key={`mobile-${review.name}`} aria-hidden={!active}>
+                    <article className={`mobile-review-card ${active ? "is-active" : ""}`} style={{ "--review-distance": index - testimonial }} key={`mobile-${review.name}`} aria-hidden={!active}>
                       <div className="mobile-review-card-top">
                         <span>{String(index + 1).padStart(2, "0")}</span>
                         {review.featured && <small>Featured review</small>}
