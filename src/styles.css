@@ -162,8 +162,16 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .reviews-heading h2 { margin: 0; color: var(--ink); font-size: clamp(43px, 4.2vw, 66px); line-height: 1.08; letter-spacing: -.035em; }
 .reviews-heading > p:not(.eyebrow) { margin: 30px 0 0; color: #60716d; font-size: 13px; line-height: 1.8; }
 .review-stage { position: relative; min-height: 470px; padding: 48px clamp(28px, 4vw, 58px) 34px; background: var(--cream); display: flex; flex-direction: column; box-shadow: 0 22px 55px rgba(23,63,66,.08); }
+.featured-review-label { position: absolute; top: 22px; right: 24px; color: var(--ink-deep); font-size: 8px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 .review-mark { color: var(--gold); font-family: "Marcellus", serif; font-size: 76px; line-height: .65; }
 .review-stage blockquote { margin: 40px 0 35px; color: var(--ink); font-size: clamp(27px, 2.5vw, 39px); line-height: 1.42; animation: review-in .55s cubic-bezier(.22,1,.36,1) both; }
+.review-stage blockquote.is-clamped { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 8; }
+.review-stage blockquote:not(.is-clamped) { white-space: pre-line; }
+.review-stage blockquote.is-expanded { max-height: 390px; margin-bottom: 30px; padding-right: 14px; overflow-y: auto; overscroll-behavior: contain; font-family: "DM Sans", sans-serif; font-size: 14px; line-height: 1.7; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; }
+.review-stage blockquote.is-expanded::-webkit-scrollbar { width: 4px; }
+.review-stage blockquote.is-expanded::-webkit-scrollbar-thumb { border-radius: 4px; background: var(--gold); }
+.review-read-more { align-self: flex-start; margin: -14px 0 30px; padding: 0 0 5px; border: 0; border-bottom: 1px solid var(--ink); background: transparent; color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+.review-stage:has(.featured-review-label) blockquote { font-size: clamp(20px, 1.65vw, 27px); line-height: 1.55; }
 .review-person { margin-top: auto; animation: review-in .5s .06s cubic-bezier(.22,1,.36,1) both; }
 .review-person strong, .review-person span { display: block; }
 .review-person strong { color: var(--ink-deep); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }

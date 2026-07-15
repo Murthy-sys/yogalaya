@@ -23,6 +23,24 @@ const programs = [
 
 const testimonials = [
   {
+    quote: `As a practicing Advocate of the Hon’ble High Court, and as an individual who attaches utmost value to discipline, structure, and sincerity in every aspect of life, I deem it both my privilege and responsibility to place on record my personal experience with Suresh’s Yogalay. Having been associated with this institution for a considerable period, I have had the opportunity to observe, practice, and benefit from its unique blend of traditional yoga, meditation, and holistic wellness. It is with deep respect and genuine satisfaction that I set forth my impressions, in the hope that others too may find encouragement to embark upon this enriching journey.
+
+I initially approached this institution with a simple objective—to improve my health, restore flexibility, and find a means of balancing the ever-increasing stress that comes with professional and personal responsibilities. However, over the course of my association with this Yogalay, I realized that it is not merely a place for physical exercise; rather, it is a well-conceived system of holistic development, guided with utmost commitment by Suresh Master and his team.
+
+The training sessions are conducted with admirable regularity and discipline. Each session follows a scientific pattern, beginning with preparatory stretches, moving into carefully demonstrated asanas, and concluding with breathing techniques and relaxation. This systematic approach ensures that the practitioner benefits not only at a physical level but also attains peace of mind and clarity of thought.
+
+What distinguishes Suresh’s Yogalay from other establishments is the personalized attention. Despite the number of students, Suresh Master and his team observe each participant with keen attention, correcting postures, suggesting modifications wherever required, and ensuring that no one feels left behind. His knowledge of yoga is not confined to mere demonstration of poses, but extends to explaining the underlying principles, the health benefits, and the precautions, thereby making the practice safe and effective for all.
+
+In my personal experience, I have observed significant improvements in stamina, reduction of stress, a noticeable sense of balance in day-to-day life and inner calm, sharpened focus, and detachment from the constant distractions of daily life. The seamless integration of meditation with traditional asanas ensures that the benefits are holistic—while the body gains strength and flexibility, the mind attains clarity, balance, and peace. I also attained both mental health and spiritual well-being. Common issues such as fatigue, stiffness, and anxiety have reduced to level zero, and I find myself more productive and composed in both professional and personal domains.
+
+I would also like to acknowledge the ethics and sincerity with which this institution functions. There is no commercial mindset, no shortcuts, and no compromise in standards. Instead, there is a genuine spirit of service, an intention to uplift the health and well-being of every participant, and a dedication that is rare to find in present times.
+
+Therefore, it is my considered opinion, based on personal experience, that Suresh’s Yogalay deserves the highest appreciation. It stands as a beacon of authentic yoga practice in our region, and I would strongly recommend it to anyone who seeks true transformation—be it in health, mind, or spirit.`,
+    name: "Parameswara Reddy M.",
+    detail: "Advocate, High Court of Amaravathi",
+    featured: true,
+  },
+  {
     quote: "The practice is simple, deeply attentive and never rushed. I leave every class feeling lighter and more at home in my body.",
     name: "Meera R.",
     detail: "Practising since 2023",
@@ -122,6 +140,7 @@ export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [testimonial, setTestimonial] = useState(0);
+  const [reviewExpanded, setReviewExpanded] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -246,20 +265,19 @@ export function App() {
 
         <section className="instructor" id="instructor">
           <div className="instructor-image" data-reveal>
-            <img src="/assets/suresh-instructor.jpg" alt="Suresh, yoga instructor at Suresh's Yogalaya, seated in meditation" />
-            <div className="instructor-experience"><strong>20+</strong><span>Years of<br />practice & teaching</span></div>
+            <img src="/assets/yogalaya-instructors.jpg" alt="Yogalaya instructors seated together in meditation" />
           </div>
           <div className="instructor-copy" data-reveal data-reveal-delay="1">
-            <p className="eyebrow">About the instructor</p>
-            <h2>Meet <em>Suresh.</em></h2>
-            <p className="instructor-lead">For more than two decades, Suresh has guided students toward a steadier relationship with movement, breath and awareness.</p>
-            <p>His teaching is grounded in patient observation and clear explanation. Rather than asking every body to fit the same pose, he helps each student understand the purpose of the practice and find an approach that feels sustainable.</p>
+            <p className="eyebrow">About the instructors</p>
+            <h2>Meet <em>our instructors.</em></h2>
+            <p className="instructor-lead">Our instructors guide students toward a steadier relationship with movement, breath and awareness.</p>
+            <p>Their teaching is grounded in patient observation and clear explanation. Rather than asking every body to fit the same pose, they help each student understand the purpose of the practice and find an approach that feels sustainable.</p>
             <div className="instructor-values">
               <div><span>01</span><h3>Experience with humility</h3><p>Long practice, shared in simple and practical language.</p></div>
-              <div><span>02</span><h3>Individual attention</h3><p>Respectful guidance shaped around the person in front of him.</p></div>
+              <div><span>02</span><h3>Individual attention</h3><p>Respectful guidance shaped around the person in front of them.</p></div>
               <div><span>03</span><h3>Practice for life</h3><p>Tools for strength, steadiness and awareness beyond the mat.</p></div>
             </div>
-            <a className="text-link dark" href="#/about-suresh">Know about me <Arrow /></a>
+            <a className="text-link dark" href="#/about-suresh">Know about us <Arrow /></a>
           </div>
         </section>
 
@@ -309,19 +327,30 @@ export function App() {
             <p>Reflections from students who have made Yogalaya part of their everyday lives.</p>
           </div>
           <div className="review-stage">
+            {testimonials[testimonial].featured && <span className="featured-review-label">Featured review</span>}
             <span className="review-mark" aria-hidden="true">“</span>
-            <blockquote key={testimonial}>{testimonials[testimonial].quote}</blockquote>
+            <blockquote className={testimonials[testimonial].featured ? (reviewExpanded ? "is-expanded" : "is-clamped") : ""} key={testimonial}>{testimonials[testimonial].quote}</blockquote>
+            {testimonials[testimonial].featured && (
+              <button
+                className="review-read-more"
+                type="button"
+                onClick={() => setReviewExpanded((expanded) => !expanded)}
+                aria-expanded={reviewExpanded}
+              >
+                {reviewExpanded ? "Show less" : "Read more"}
+              </button>
+            )}
             <div className="review-person" key={`person-${testimonial}`}><strong>{testimonials[testimonial].name}</strong><span>{testimonials[testimonial].detail}</span></div>
             <div className="review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div>
             <div className="testimonial-controls">
-              <button onClick={() => setTestimonial((testimonial - 1 + testimonials.length) % testimonials.length)} aria-label="Previous review">←</button>
+              <button onClick={() => { setReviewExpanded(false); setTestimonial((testimonial - 1 + testimonials.length) % testimonials.length); }} aria-label="Previous review">←</button>
               <span>{String(testimonial + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
-              <button onClick={() => setTestimonial((testimonial + 1) % testimonials.length)} aria-label="Next review">→</button>
+              <button onClick={() => { setReviewExpanded(false); setTestimonial((testimonial + 1) % testimonials.length); }} aria-label="Next review">→</button>
             </div>
           </div>
           <div className="review-directory" aria-label="Choose a review">
             {testimonials.map((review, index) => (
-              <button className={testimonial === index ? "is-active" : ""} onClick={() => setTestimonial(index)} key={review.name} aria-pressed={testimonial === index}>
+              <button className={testimonial === index ? "is-active" : ""} onClick={() => { setReviewExpanded(false); setTestimonial(index); }} key={review.name} aria-pressed={testimonial === index}>
                 <span>{String(index + 1).padStart(2, "0")}</span><strong>{review.name}</strong><small>{review.detail}</small>
               </button>
             ))}
