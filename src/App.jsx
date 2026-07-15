@@ -170,7 +170,7 @@ function SiteFooter({ footerRef }) {
   return (
     <footer ref={footerRef}>
       <div className="footer-intro">
-        <a className="footer-brand" href="#home"><img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" /></a>
+        <a className="footer-brand" href="#home"><img src="/assets/sureshs-yogalaya-logo.png" alt="Suresh's Yogalaya" loading="lazy" decoding="async" /></a>
         <p>A place for Health and self Transformation.</p>
       </div>
       <div className="footer-col">
@@ -192,7 +192,7 @@ function SiteFooter({ footerRef }) {
       </div>
       <div className="footer-bottom">
         <span>© 2026 Suresh’s Yogalaya</span><span>Health · Awareness · Transformation</span>
-        <a className="developer-credit" href="https://www.trimugo.in" target="_blank" rel="noreferrer" aria-label="Website developed by Trimugo"><span>Developed by</span><img src="/assets/trimugo-logo.png" alt="Trimugo — Smart Solutions. Real Results." /></a>
+        <a className="developer-credit" href="https://www.trimugo.in" target="_blank" rel="noreferrer" aria-label="Website developed by Trimugo"><span>Developed by</span><img src="/assets/trimugo-logo.png" alt="Trimugo — Smart Solutions. Real Results." loading="lazy" decoding="async" /></a>
       </div>
     </footer>
   );
@@ -204,7 +204,7 @@ function AboutSuresh() {
       <main>
         <section className="about-suresh-hero instructor-profile instructor-profile-suresh">
           <div className="about-suresh-portrait instructor-portrait" data-reveal>
-            <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" />
+            <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" decoding="async" />
             <div><strong>20+</strong><span>Years devoted to<br />practice & teaching</span></div>
           </div>
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
@@ -234,7 +234,7 @@ function AboutSuresh() {
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
           <div className="about-suresh-portrait instructor-portrait" data-reveal>
-            <img src="/assets/gayatri-keerti-profile.jpeg" alt="Yoga instructor Gayatri Keerti at an International Yoga Day event" />
+            <img src="/assets/gayatri-keerti-profile.jpeg" alt="Yoga instructor Gayatri Keerti at an International Yoga Day event" loading="lazy" decoding="async" />
             <div className="instructor-role-badge"><span>Yoga instructor<br />Suresh’s Yogalaya</span></div>
           </div>
         </section>
@@ -360,7 +360,7 @@ export function App() {
             </div>
           </div>
           <div className="hero-visual" data-reveal data-reveal-delay="1">
-            <img src="/assets/yoga-teacher-hero.png" alt="Yoga teacher seated in a calm, sunlit studio" />
+            <img src="/assets/yoga-teacher-hero.png" alt="Yoga teacher seated in a calm, sunlit studio" fetchPriority="high" decoding="async" />
             <div className="hero-note"><span>01</span> Breath<br />Movement<br />Stillness</div>
           </div>
           <a className="scroll-note" href="#programs">Scroll to discover</a>
@@ -388,7 +388,7 @@ export function App() {
 
         <section className="instructor" id="instructor">
           <div className="instructor-image" data-reveal>
-            <img src="/assets/yogalaya-instructors.jpg" alt="Yogalaya instructors seated together in meditation" />
+            <img src="/assets/yogalaya-instructors.jpg" alt="Yogalaya instructors seated together in meditation" loading="lazy" decoding="async" />
           </div>
           <div className="instructor-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">About the instructors</p>
@@ -429,7 +429,7 @@ export function App() {
             {workshops.map((workshop, index) => (
               <article className="workshop-card" key={workshop.no} data-reveal style={{ "--reveal-index": index }}>
                 <div className="workshop-image">
-                  <img src={workshop.image} alt={`${workshop.title} at Suresh's Yogalaya`} loading="lazy" />
+                  <img src={workshop.image} alt={`${workshop.title} at Suresh's Yogalaya`} loading="lazy" decoding="async" />
                   <span>Upcoming</span>
                 </div>
                 <div className="workshop-content">

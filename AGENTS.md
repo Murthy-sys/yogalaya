@@ -35,3 +35,4 @@ When implementing from a selected generated mock, treat that image as the source
 - The mobile review carousel should feel premium and gesture-responsive: cards follow the finger, settle with spring physics, use restrained 3D depth, and feature layered translucent editorial surfaces with active-edge lighting.
 - On a full page load or refresh, disable browser scroll restoration and start the current route at the top.
 - Every route change must synchronously reset to the top inside the route transition; instructor portraits and copy use scroll-triggered mobile reveals on the About route.
+- On mobile, defer below-the-fold section rendering with `content-visibility` and intrinsic-size placeholders; lazy-load and asynchronously decode non-critical imagery while keeping above-the-fold hero imagery eager.

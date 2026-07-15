@@ -303,6 +303,9 @@ footer { background: var(--ink-deep); color: #d5dfdb; padding: 76px 8vw 28px; di
 }
 
 @media (max-width: 760px) {
+  .instructor, .programs, .workshops, .reviews, .faq, .contact, .location, .instructor-profile-gayatri, .site-shell > footer { content-visibility: auto; contain-intrinsic-size: auto 780px; }
+  .workshops { contain-intrinsic-size: auto 1500px; }
+  .site-shell > footer { contain-intrinsic-size: auto 720px; }
   [data-reveal] { transform: translate3d(0, 22px, 0) scale(.992); filter: blur(3px); clip-path: inset(0 0 5% 0); transition-duration: .72s, .82s, .52s, .82s; transition-timing-function: var(--ease-smooth), var(--ease-spring), ease, var(--ease-smooth); }
   [data-reveal][data-reveal-delay="1"] { transition-delay: .07s; }
   .site-header { height: 74px; padding: 0 18px; transform: translateZ(0); transition: height .5s var(--ease-spring), background .4s ease, border-color .4s ease, box-shadow .4s ease; }
