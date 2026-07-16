@@ -1,5 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import { Hero } from "./components/Hero";
+import { Programs } from "./components/Programs";
+import { Instructors } from "./components/Instructors";
+import { TeachingApproach } from "./components/TeachingApproach";
+import { Workshops } from "./components/Workshops";
+import { Reviews } from "./components/Reviews";
+import { Faq } from "./components/Faq";
+import { Contact } from "./components/Contact";
+import { Location } from "./components/Location";
 
 const programs = [
   {
@@ -123,10 +132,11 @@ const faqs = [
   { question: "Are classes suitable for people with pain or limited mobility?", answer: "Therapeutic and individual sessions can be adapted around mobility, recovery and everyday wellbeing. Contact us first so we can understand your needs." },
   { question: "How do I reserve a class or workshop?", answer: "Send us a WhatsApp message with the class or workshop you are interested in. We will confirm the schedule and availability directly." },
   { question: "Where is Suresh’s Yogalaya located?", answer: "We are on MeeSeva Road in Ramnagar, opposite the MeeSeva office, Anantapur, Andhra Pradesh 515004." },
+  { question: "What is the difference between yoga and gym?", answer: "We are not just a physical body visible to the eyes. We are body, mind, emotions, breath, energy and consciousness. Yoga itself means union: helping all these dimensions function as one unit, with no friction or the least possible friction. It is up to you whether to work only on the physical body, or to work across many dimensions and explore the fullest potential of your life." },
 ];
 
 const whatsappUrl = "https://wa.me/919000382815?text=Namaste%2C%20I%27d%20like%20to%20know%20more%20about%20classes%20at%20Suresh%27s%20Yogalaya.";
-const justdialReviewsUrl = "https://www.justdial.com/Anantapur/Suresh-S-Yogalaya-Mee-Seva-Road-Opposite-To-Meeseva-Office-Walkable-Distance-From-Ramnagar-Subway-Ramnagar/9999P8554-8554-180322172514-Q6C5_BZDET";
+const justdialReviewsUrl = "https://share.google/iUKOW55UqZQT2GuQ4";
 
 function Arrow() {
   return <span aria-hidden="true" className="button-arrow">→</span>;
@@ -184,7 +194,8 @@ function SiteFooter({ footerRef }) {
       </div>
       <div className="footer-col footer-connect">
         <h3>Connect</h3>
-        <a href={whatsappUrl} target="_blank" rel="noreferrer">+91 90003 82815</a>
+        <a href={whatsappUrl} target="_blank" rel="noreferrer">Suresh · +91 90003 82815</a>
+        <a href="tel:+919686570032">Gayatri Keerthi · +91 96865 70032</a>
         <div className="social-links">
           <a href="https://www.instagram.com/sureshesapathi?igsh=bzJueWQwNGJtZjZ2" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="social-dot"/></svg></a>
           <a href="https://youtube.com/@bruceleesuresh?si=euIyGGvrdOe0eABN" target="_blank" rel="noreferrer" aria-label="Suresh's Yogalaya on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8Z"/><path d="m10 15.4 5-3.4-5-3.4v6.8Z" className="social-play"/></svg></a>
@@ -205,17 +216,18 @@ function AboutSuresh() {
         <section className="about-suresh-hero instructor-profile instructor-profile-suresh">
           <div className="about-suresh-portrait instructor-portrait" data-reveal>
             <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" decoding="async" />
-            <div><strong>20+</strong><span>Years devoted to<br />practice & teaching</span></div>
+            <div><strong>23</strong><span>Years of self<br />practice</span></div>
           </div>
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">Instructor 01</p>
             <h1><em>Suresh.</em></h1>
-            <p className="about-suresh-lead">Suresh is a yoga instructor with more than two decades of experience helping students build strength, steadiness and awareness through consistent practice.</p>
+            <p className="about-suresh-lead">Suresh brings 23 years of self-practice and 13 years of teaching experience to helping students build strength, steadiness and awareness through consistent practice.</p>
             <p>His classes bring together classical postures, breathwork and meditation in a way that is clear, respectful and grounded in everyday life. He believes progress begins by understanding the person—not by forcing the pose.</p>
             <div className="about-suresh-highlights" aria-label="Instructor teaching highlights">
               <span>Structured sessions</span>
               <span>Personal posture guidance</span>
               <span>Breathwork & meditation</span>
+              <span>23 years self-practice · 13 years teaching</span>
             </div>
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
@@ -223,11 +235,14 @@ function AboutSuresh() {
         <section className="about-suresh-hero instructor-profile instructor-profile-gayatri">
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">Instructor 02</p>
-            <h1>Gayatri<br /><em>Keerti.</em></h1>
-            <p className="about-suresh-lead">Gayatri Keerti is a yoga instructor at Suresh’s Yogalaya and an integral part of the studio’s teaching team.</p>
-            <p>She works alongside Suresh in creating a welcoming space where students can approach yoga with attention, consistency and care.</p>
+            <h1>Meet<br /><em>Gayatri.</em></h1>
+            <p className="about-suresh-lead">Yoga Instructor <span aria-hidden="true">|</span> M.Sc. in Yoga</p>
+            <p>Gayatri is a passionate Yoga Instructor at Suresh Yogalaya whose journey into yoga began through her search for balance and well-being. Before entering the field of yoga, she worked as an IT Professional, where she experienced the challenges of managing a demanding career alongside family life.</p>
+            <p>While looking for ways to support her child’s growth and improve her own physical and mental well-being, she discovered Suresh Yogalaya. Yoga transformed her life by helping her develop better physical health, mental clarity, emotional balance, and a deeper understanding of the connection between body, mind, and inner energy.</p>
+            <p>Inspired by this transformation, Gayatri pursued her Master’s Degree (M.Sc.) in Yoga, making yoga not just a profession but a lifelong path of learning and service.</p>
+            <p>Today, as a Yoga Instructor at Suresh Yogalaya, she is committed to helping people of all ages experience the benefits of yoga through personalized guidance and compassionate teaching. She believes that yoga is a powerful tool for overcoming the challenges of modern life and cultivating a healthier, more balanced life.</p>
             <div className="about-suresh-highlights" aria-label="Gayatri Keerti teaching highlights">
-              <span>Yoga instruction</span>
+              <span>M.Sc. in Yoga</span>
               <span>Attentive student guidance</span>
               <span>Part of the Yogalaya teaching team</span>
             </div>
@@ -349,101 +364,36 @@ export function App() {
       <SiteNavigation menuOpen={menuOpen} scrolled={scrolled} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={closeMenu} />
 
       <main>
-        <section className="hero" id="home">
-          <div className="hero-copy" data-reveal>
-            <p className="eyebrow">A place for health & self transformation</p>
-            <h1>Come home<br />to your <em>body.</em></h1>
-            <p className="hero-intro">Traditional yoga taught with clarity, care and a deep respect for where you are today.</p>
-            <div className="hero-actions">
-              <a className="primary-button" href="#contact">Begin your practice <Arrow /></a>
-              <a className="text-link" href="#programs">Explore programs</a>
-            </div>
-          </div>
-          <div className="hero-visual" data-reveal data-reveal-delay="1">
-            <img src="/assets/yoga-teacher-hero.jpg" alt="Yoga teacher seated in a calm, sunlit studio" fetchPriority="high" decoding="async" />
-            <div className="hero-note"><span>01</span> Breath<br />Movement<br />Stillness</div>
-          </div>
-          <a className="scroll-note" href="#programs">Scroll to discover</a>
-        </section>
+        <Hero />
 
-        <section className="programs" id="programs">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Ways to practise</p>
-            <h2>A practice for<br /><em>every season.</em></h2>
-          </div>
-          <div className="program-list" data-reveal data-reveal-delay="1">
-            {programs.map((program) => (
-              <article className="program-card" key={program.no}>
-                <span className="program-number">{program.no}</span>
-                <div>
-                  <h3>{program.title}</h3>
-                  <p>{program.text}</p>
-                </div>
-                <p className="program-meta">{program.meta}</p>
-                <a href="#contact" aria-label={`Enquire about ${program.title}`}><Arrow /></a>
-              </article>
-            ))}
-          </div>
-        </section>
+        <Programs programs={programs} />
 
-        <section className="instructor" id="instructor">
-          <div className="instructor-image" data-reveal>
-            <img src="/assets/yogalaya-instructors.jpg" alt="Yogalaya instructors seated together in meditation" loading="lazy" decoding="async" />
-          </div>
-          <div className="instructor-copy" data-reveal data-reveal-delay="1">
-            <p className="eyebrow">About the instructors</p>
-            <h2>Meet <em>our instructors.</em></h2>
-            <p className="instructor-lead">Our instructors guide students toward a steadier relationship with movement, breath and awareness.</p>
-            <p>Their teaching is grounded in patient observation and clear explanation. Rather than asking every body to fit the same pose, they help each student understand the purpose of the practice and find an approach that feels sustainable.</p>
-            <div className="instructor-values">
-              <div><span>01</span><h3>Experience with humility</h3><p>Long practice, shared in simple and practical language.</p></div>
-              <div><span>02</span><h3>Individual attention</h3><p>Respectful guidance shaped around the person in front of them.</p></div>
-              <div><span>03</span><h3>Practice for life</h3><p>Tools for strength, steadiness and awareness beyond the mat.</p></div>
-            </div>
-            <a className="text-link dark" href="#/about-suresh">Know about us <Arrow /></a>
-          </div>
-        </section>
+        <Instructors />
 
-        <section className="about-suresh-story home-teaching-approach" id="teaching-approach">
-          <div className="about-story-heading">
-            <p className="eyebrow">How Suresh teaches</p>
-            <h2>Care in every<br /><em>detail.</em></h2>
-            <p className="about-story-source">These teaching qualities are drawn from a long-term student’s statement of experience with Suresh’s Yogalaya.</p>
-          </div>
-          <div className="about-story-cards">
-            <article><span>/01</span><h3>Structured, disciplined sessions</h3><p>Classes follow a considered sequence: preparatory stretches, carefully demonstrated asanas, breathing techniques, relaxation and meditation.</p></article>
-            <article><span>/02</span><h3>Personal attention</h3><p>Suresh and his team observe each participant closely, correct posture and suggest modifications so students can practise with confidence.</p></article>
-            <article><span>/03</span><h3>Principles, benefits and precautions</h3><p>Teaching goes beyond demonstrating poses. Students are helped to understand why a practice is done, its intended benefits and the precautions that support safe, effective movement.</p></article>
-            <article><span>/04</span><h3>A holistic approach</h3><p>Traditional yoga, breathwork and meditation are brought together to support strength, flexibility, calm, clarity and balance in everyday life.</p></article>
-          </div>
-        </section>
+        <TeachingApproach />
 
-        <section className="workshops" id="workshops">
-          <div className="workshops-heading" data-reveal>
-            <p className="eyebrow">Focused practice</p>
-            <h2>Workshops to go<br /><em>deeper.</em></h2>
-            <p>Small, attentive sessions that create space to explore a practice beyond the rhythm of a regular class.</p>
-            <a className="text-link dark" href={whatsappUrl} target="_blank" rel="noreferrer">Ask about upcoming dates <Arrow /></a>
-          </div>
-          <div className="workshop-grid" aria-label="Upcoming workshops">
-            {workshops.map((workshop, index) => (
-              <article className="workshop-card" key={workshop.no} data-reveal style={{ "--reveal-index": index }}>
-                <div className="workshop-image">
-                  <img src={workshop.image} alt={`${workshop.title} at Suresh's Yogalaya`} loading="lazy" decoding="async" />
-                  <span>Upcoming</span>
-                </div>
-                <div className="workshop-content">
-                  <span className="workshop-number">{workshop.no}</span>
-                  <h3>{workshop.title}</h3>
-                  <p>{workshop.text}</p>
-                  <div className="workshop-footer"><small>{workshop.meta}</small><a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={`Enquire about ${workshop.title}`}><Arrow /></a></div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <Workshops workshops={workshops} whatsappUrl={whatsappUrl} />
 
-        <section className="reviews" id="reviews" data-reveal>
+        <Reviews
+          testimonials={testimonials}
+          testimonial={testimonial}
+          expanded={reviewExpanded}
+          dragging={reviewDragging}
+          dragOffset={reviewDragOffset}
+          justdialReviewsUrl={justdialReviewsUrl}
+          onSelect={selectReview}
+          onToggleExpanded={() => setReviewExpanded((expanded) => !expanded)}
+          onTouchStart={(event) => { reviewTouchStart.current = event.touches[0].clientX; setReviewDragging(true); }}
+          onTouchMove={(event) => {
+            if (reviewTouchStart.current === null) return;
+            const offset = event.touches[0].clientX - reviewTouchStart.current;
+            const atBoundary = (testimonial === 0 && offset > 0) || (testimonial === testimonials.length - 1 && offset < 0);
+            setReviewDragOffset(Math.max(-110, Math.min(110, offset * (atBoundary ? .28 : 1))));
+          }}
+          onTouchEnd={handleReviewTouchEnd}
+          onTouchCancel={() => { reviewTouchStart.current = null; setReviewDragging(false); setReviewDragOffset(0); }}
+        />
+        {false && <section className="reviews" id="reviews" data-reveal>
           <div className="reviews-heading">
             <p className="eyebrow">Words from our community</p>
             <h2>Practice,<br /><em>in their words.</em></h2>
@@ -468,7 +418,7 @@ export function App() {
               <span>{String(testimonial + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
               <button onClick={() => { setReviewExpanded(false); setTestimonial((testimonial + 1) % testimonials.length); }} aria-label="Next review">→</button>
             </div>
-            <a className="all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews on Justdial <Arrow /></a>
+            <a className="all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews<Arrow /></a>
           </div>
           <div className="review-directory" aria-label="Choose a review">
             {testimonials.map((review, index) => (
@@ -521,69 +471,15 @@ export function App() {
               <button type="button" onClick={() => selectReview(testimonial + 1)} disabled={testimonial === testimonials.length - 1} aria-label="Next review">→</button>
             </div>
             <div className="mobile-review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div>
-            <a className="mobile-all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews on Justdial <Arrow /></a>
+            <a className="mobile-all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews<Arrow /></a>
           </div>
-        </section>
+        </section>}
 
-        <section className="faq" id="faq">
-          <div className="faq-heading" data-reveal>
-            <p className="eyebrow">Good to know</p>
-            <h2>Frequently asked<br /><em>questions.</em></h2>
-            <p>Still curious? Send us a WhatsApp message and we’ll be happy to help.</p>
-          </div>
-          <div className="faq-list" data-reveal data-reveal-delay="1">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <article className={`faq-item ${isOpen ? "is-open" : ""}`} key={faq.question}>
-                  <h3>
-                    <button type="button" onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen} aria-controls={`faq-answer-${index}`}>
-                      <span>{faq.question}</span><span aria-hidden="true">{isOpen ? "−" : "+"}</span>
-                    </button>
-                  </h3>
-                  <div className="faq-answer" id={`faq-answer-${index}`} aria-hidden={!isOpen}><div><p>{faq.answer}</p></div></div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
+        <Faq faqs={faqs} openFaq={openFaq} onToggle={(index) => setOpenFaq(openFaq === index ? -1 : index)} />
 
-        <section className="contact" id="contact">
-          <div className="contact-copy" data-reveal>
-            <p className="eyebrow">Your first step</p>
-            <h2>Begin where<br />you <em>are.</em></h2>
-            <p>Tell us a little about what you need. We’ll help you find a class that feels right for your body, schedule and experience.</p>
-            <div className="contact-details"><span>Ramnagar, Anantapur</span><span>Mon–Sat · 6:00 AM–8:00 PM</span></div>
-          </div>
-          {submitted ? (
-            <div className="form-success" role="status"><span>Thank you.</span><h3>Your practice begins here.</h3><p>We’ll be in touch shortly to help choose your first session.</p><button onClick={() => setSubmitted(false)}>Send another enquiry</button></div>
-          ) : (
-            <form data-reveal data-reveal-delay="1" onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }}>
-              <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
-              <label>Phone<input type="tel" name="phone" placeholder="Your phone number" required /></label>
-              <label>I’m interested in<select name="program" defaultValue=""><option value="" disabled>Choose a program</option>{programs.map(({title}) => <option key={title}>{title}</option>)}</select></label>
-              <label>Anything we should know?<textarea name="message" rows="3" placeholder="Tell us about your goals or experience" /></label>
-              <button className="primary-button" type="submit">Begin your journey <Arrow /></button>
-            </form>
-          )}
-        </section>
+        <Contact programs={programs} submitted={submitted} onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} onReset={() => setSubmitted(false)} />
 
-        <section className="location" id="location">
-          <div className="location-map" data-reveal>
-            <iframe
-              title="Suresh's Yogalaya location on Google Maps"
-              src="https://maps.google.com/maps?q=14.6724758,77.5895235&z=18&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div className="location-copy" data-reveal data-reveal-delay="1">
-            <p className="eyebrow">Visit the Yogalaya</p>
-            <h2>Find your way<br /><em>to practice.</em></h2>
-            <p>Suresh’s Yogalaya<br />MeeSeva Road, Ramnagar<br />Opposite MeeSeva office<br />Anantapur, Andhra Pradesh 515004</p>
-            <a className="primary-button" href="https://maps.app.goo.gl/3gdoCaoVG5oW6FWSA?g_st=awb" target="_blank" rel="noreferrer">Open in Google Maps <Arrow /></a>
-          </div>
-        </section>
+        <Location />
       </main>
 
       <FloatingWhatsApp hidden={footerVisible} />
