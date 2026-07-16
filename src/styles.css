@@ -130,6 +130,7 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .about-suresh-intro h1 { margin: 0; color: var(--ink); font-size: clamp(62px, 6.5vw, 104px); line-height: .96; letter-spacing: -.045em; }
 .about-suresh-lead { max-width: 690px; margin: 42px 0 22px; color: var(--ink); font-family: "Marcellus", serif; font-size: clamp(23px, 2.2vw, 33px); line-height: 1.5; }
 .about-suresh-intro > p:not(.eyebrow):not(.about-suresh-lead) { max-width: 620px; margin: 0 0 38px; color: #60716d; line-height: 1.9; }
+.about-suresh-intro .profile-highlight { color: var(--ink); font-weight: 600; }
 .about-suresh-highlights { width: 100%; max-width: 620px; margin: 0 0 38px; border-top: 1px solid var(--line); }
 .about-suresh-highlights span { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 600; }
 .instructor-profile { border-bottom: 1px solid var(--line); }

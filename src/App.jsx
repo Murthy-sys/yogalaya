@@ -51,54 +51,45 @@ Therefore, it is my considered opinion, based on personal experience, that Sures
     featured: true,
   },
   {
-    quote: "Experiencing something new in my life. First of all, I thought of a Gym for bodybuilding but with a thought that being mentally strong is more important than physical fitness in the upcoming materialistic life I thought of joining the Yoga Institute. But here I got to know that we will experience both Physical fitness and Mental fitness with Yoga. The Institute will do 100% justification for this.",
-    name: "Sai Teja K",
-    detail: "29 July 2018",
+    quote: `Before my first meeting with Suresh I really didn’t know what to expect from a yoga class as my only reference point were a few classes taken in the US. I wasn’t even sure if I wanted to commit to a daily yoga practice. But when I met Suresh, his confidence and conviction in what he does shined through and I knew right away I was going to be in good hands.
+
+The journey is being wonderfully challenging and empowering. I think we don’t know where we really stand physically and spiritually or even what’s possible for us until we put ourselves to work. And the sessions at Yogalay are certainly hard work. It is not easy to realize what your current limits are. However, I love Suresh’s gentle approach and the quiet atmosphere at his yoga studio which makes for the perfect place to grow at your own pace. I am beyond happy to see that the impact of what happens on the yoga mat stays with me far beyond the session. It’s only been a few weeks, but I am already experiencing myself in a new light. I am really thankful to Suresh for helping me believe that progress is possible if I apply myself to it and for reminding me that everything will come in due time. Thank you, Suresh, for your support in this journey! The work you do doesn’t go unseen!`,
+    name: "Paula",
+    detail: "Google review",
   },
   {
-    quote: "This is Rajasekhar, What Purpose your decided to join yoga classes, For your weight loss, stress relief, peacefulness, stability in life... Etc.. Here Suresh sir and Gayatri Mam will treat you as a kid and they will explain you clearly about yoga... Coming to my Experience 1. Yoga improved my Flexibility 2. Improved my mental health, boost immunity, reduced anxiety, improved my strength.. Etc. Finally yoga will make you mentally and physically fit...... I have faced so many Experiences in a short time. In my experiences mostly i liked one Word ‘CONTROL’..... If you don't have CONTROL on proper diet and sleep you will facing weight gain or weight loss problems. If you don't have CONTROL on anger or stability or stress management you will face lot of problems mentally and Physically. If your mind in your control.. You will achieve whatever you like. I'm sharing my experiences here due to it will helpful to few people atleast. Thank you very much to Suresh sir and Gayatri Mam you both made me Blissful.",
-    name: "Kondreddy Rajasekhar Reddy",
-    detail: "7 October 2022",
+    quote: `I came to know about Yogalaya from Facebook. I have been practicing yoga for the last six months, and my perception of yoga has completely changed. I was under the impression that yoga was only physical activity. Slowly, I realized from Yoga Master Suresh—who reiterates during training sessions—that yoga is a union of body and mind.
+
+Suresh’s in-depth knowledge, rich experience, and command of yoga are clearly visible in every aspect of training. He pays close attention to every individual, understands their needs, trains accordingly, and modifies the approach without losing the essence of yoga—making sure goals are met.
+
+Whenever a new asana or technique is taught, he explains its benefits. This improves a trainee’s yoga knowledge and motivates us to practice continuously. His slow and steady approach, with a long-term vision, is truly appreciable. He is very friendly and approachable, and answers every question with patience. These are his assets and make him different.
+
+One of my favorite quotes from him is: “Any vehicle needs maintenance; likewise, the human body also needs regular maintenance, which can be achieved with regular practice of yoga.”
+
+I would highly recommend Yogalaya and Suresh Master to anyone who wants to train, practice, and experience yoga. All the very best, and thank you for the valuable training provided so far!
+
+Positive: Communication, Quality, Professionalism.`,
+    name: "Ram",
+    detail: "Google review",
   },
   {
-    quote: "I'm Hemanth, software engineer at Cognizant Technology Solutions. Doing yoga is quite a good experience. ‘Suresh Yoga Laya’ followed a systematic procedure, they introduce asanas based on our body flexibility. They explain importance of each and every asana. For me I felt good waking up early in the morning and making my body flexible. On Fridays we have a special two-hour session, Suresh sir will teach us about importance of yoga. Yoga is essential for our daily lives. I strongly suggest everyone to join Suresh Yoga Laya.",
-    name: "User (Hemanth)",
-    detail: "24 September 2022",
-  },
-  {
-    quote: "Yogalay is the right place to tune your body mind and spirit in to one. Suresh is a great soul and he helps the students with a great motivation to learn. He is very honest teacher. I am very happy that I joined the class.",
-    name: "Rajeswari M",
-    detail: "12 April 2019",
-  },
-  {
-    quote: "Balancing your mind and focus is very important for competitive exams here you can learn with best trainer, you can feel the difference with in a week.",
-    name: "Akhil",
-    detail: "9 March 2019",
-  },
-  {
-    quote: "Truly transforming lives, it puts in lot of energy and consciousness into life, trains minds to master its own potential through sadhana (practice). Saliently, the guru (teacher) is so well versed with yoga that his teachings fructify the practice. Outdo your own infirmity. Learn, test and train yourself. P.S. — apt premises to perform yoga. The teacher also preaches a tinge of spirituality. Live life up to its full potential.",
-    name: "Renuka Prasad",
-    detail: "30 January 2019",
-  },
-  {
-    quote: "This is the fantastic institute to learn yoga this institute gives 100% justification very good and polite teaching. I am completely satisfied for learning yoga in this best institute. Thank you.",
-    name: "Trilokya",
-    detail: "20 September 2018",
-  },
-  {
-    quote: "Finally, my quest for a qualitative yoga training center ended after finding Yogalaya. Perfect place for the people who are passionate towards learning yoga.",
-    name: "Archana Devi",
-    detail: "26 July 2018",
-  },
-  {
-    quote: "Everything about The Yogalaya Studio is worth experiencing! Fantastic instructor. The wide variety of classes offered. The healing, relaxing and energizing benefits of yoga practice. The warm and welcoming space of the studio itself.",
-    name: "Revathi",
-    detail: "5 June 2018",
-  },
-  {
-    quote: "This a awesome place for training yoga's... Start your yoga career in this place... great master and good atmosphere.",
-    name: "Jeevan Kumar",
-    detail: "11 May 2018",
+    quote: `Embarking on a three-month journey with yoga has been a transformative experience. When I started, I was a bit skeptical about what yoga could offer, but it quickly became a cherished part of my daily routine.
+
+I’ve had severe migraine pain for seven years, but through consistent yoga practice, I’ve been able to reduce it significantly. Yoga has helped me manage stress, relax my body, and find a sense of calm, which has been crucial in decreasing the frequency and intensity of my migraines.
+
+Over the past three months, I’ve noticed significant improvements in my physical health. My flexibility has increased considerably; poses that once seemed impossible now feel comfortable and natural. My strength, particularly in my core and upper body, has also improved, which has positively impacted other physical activities I engage in.
+
+One of the most surprising aspects of this journey has been the mental and emotional benefits. Yoga has taught me the importance of mindfulness and being present in the moment. The practice has become a form of moving meditation, helping me calm my mind and reduce stress. I find myself more patient and less reactive in challenging situations. The breathing techniques learned in yoga have also been invaluable, providing tools to manage anxiety and improve focus.
+
+Yoga has toned my body, revealing strength and balance. The poses have not only sculpted my muscles, but also enhanced my flexibility and posture, creating a well-rounded transformation.
+
+In just three months, yoga has brought a sense of bliss into my life that I didn’t know was possible. It has taught me that true happiness comes from within, through connection, mindfulness, and self-awareness. This experience has been nothing short of transformative, and I am excited to continue this journey, knowing that each practice brings me closer to this blissful state.
+
+Since practicing with Suresh and Keerthi, I have noticed significant improvements in my physical health, including increased flexibility and strength. The mental and emotional benefits have been equally profound, with a noticeable reduction in stress and an enhanced sense of well-being. Their teaching incorporates not just physical asanas, but also pranayama, meditation, and yoga philosophy, providing a comprehensive approach to wellness. An experienced teacher like Suresh Master brings authenticity to the practice, staying true to the roots of yoga and ensuring that students receive a genuine experience.
+
+I highly suggest trying yoga if you’re looking for a natural way to improve your physical and mental well-being. Yoga helps in finding balance, reducing stress, and fostering a deep sense of inner peace. Give it a try—you might find it becomes a vital part of your life. Overall, it was an eye-opening experience that introduced me to the benefits of yoga.`,
+    name: "Spandana",
+    detail: "Google review",
   },
 ];
 
@@ -221,20 +212,14 @@ function AboutSuresh() {
             <p className="eyebrow">About the founder</p>
             <h1>Meet<br /><em>Mr. Suresh.</em></h1>
             <p className="about-suresh-lead">Founder & Master Trainer, Suresh’s Yogalaya</p>
-            <p>Suresh is a dedicated Yoga Teacher, Martial Artist and State-Level Judo Player, committed to helping people achieve holistic health through the timeless wisdom of yoga.</p>
+            <p>Suresh is a dedicated <strong className="profile-highlight">Yoga Teacher, Martial Artist and State-Level Judo Player</strong>, committed to helping people achieve holistic health through the timeless wisdom of yoga.</p>
             <p>His yoga journey began at the age of 13 with a deep passion for self-practice. Over the years, this passion evolved into a lifelong mission to inspire individuals to lead healthier, happier and more balanced lives.</p>
             <p>While pursuing his B.Tech, his outstanding yoga demonstrations earned him the opportunity to teach yoga to the Head of the Institution. This boosted his confidence and became a stepping stone for his career.</p>
-            <p>To deepen his knowledge, he trained at one of the oldest yoga institutes, The Yoga Institute, Mumbai, and refined his skills at Bharath Thakur Artistic Yoga. During his career, he has conducted personalised yoga sessions for celebrities and workshops for clients including RDT, HPCL and Union Bank employees.</p>
+            <p>To deepen his knowledge, he trained at one of the oldest yoga institutes, <strong className="profile-highlight">The Yoga Institute, Mumbai</strong>, and refined his skills at <strong className="profile-highlight">Bharath Thakur Artistic Yoga</strong>. During his career, he has conducted <strong className="profile-highlight">personalized yoga sessions for celebrities</strong> and workshops for clients including <strong className="profile-highlight">RDT, HPCL and Union Bank employees</strong>.</p>
             <p>Suresh has worked with children, teenagers, adults, senior citizens, fitness enthusiasts, professionals and individuals dealing with stress, anxiety, hyperactivity and lifestyle-related challenges.</p>
             <p>Out of his passion for yoga and his own experiences, he has innovated unique techniques that shape an outstanding teaching approach—combining traditional yogic principles with practical techniques to make yoga accessible and beneficial for everyone.</p>
-            <p>Inspired by his spiritual journey and a deep connection with nature, Suresh moved from Mumbai to Anantapur and founded Suresh’s Yogalaya. Today, the institute offers both offline and online programmes.</p>
-            <p>“Suresh believes that through yoga one can move from animal nature to human nature, and further to divine nature. With consistent effort, one can experience something beyond body and mind, helping us move towards consciousness and bliss.”</p>
-            <div className="about-suresh-highlights" aria-label="Instructor teaching highlights">
-              <span>Structured sessions</span>
-              <span>Personal posture guidance</span>
-              <span>Breathwork & meditation</span>
-              <span>23 years self-practice · 13 years teaching</span>
-            </div>
+            <p>Inspired by his spiritual journey and a deep connection with nature, Suresh moved from Mumbai to Anantapur and founded <strong className="profile-highlight">Anantapur Suresh’s Yogalaya</strong>. Today, the institute offers both <strong className="profile-highlight">offline and online programs</strong>.</p>
+            <p>“Suresh believes that through yoga one can move from <strong className="profile-highlight">animal nature to human nature, and further to divine nature</strong>. With consistent effort, one can experience something beyond body and mind, helping us move towards <strong className="profile-highlight">consciousness and bliss</strong>.”</p>
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
         </section>
