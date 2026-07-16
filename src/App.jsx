@@ -103,27 +103,26 @@ Therefore, it is my considered opinion, based on personal experience, that Sures
 ];
 
 const workshops = [
-  {
-    no: "01",
-    title: "Weekend Yoga Immersion",
-    text: "A focused morning of classical asana, alignment and guided rest for students who want to deepen their foundations.",
-    meta: "In person · All levels",
-    image: "/assets/workshop-alignment.jpg",
-  },
-  {
-    no: "02",
-    title: "Restorative Yoga Reset",
-    text: "A quiet supported practice using bolsters, blankets and guided rest to release effort and restore the nervous system.",
-    meta: "Small group · 90 minutes",
-    image: "/assets/workshop-restorative.jpg",
-  },
-  {
-    no: "03",
-    title: "Breath & Meditation",
-    text: "An unhurried exploration of pranayama and meditation practices for steadiness, clarity and renewed energy.",
-    meta: "All levels · 90 minutes",
-    image: "/assets/workshop-breathwork.jpg",
-  },
+  "Yoga for Weight Management",
+  "Yoga for Mental Balance",
+  "Yoga for Life Management",
+  "Yoga for Stress Management",
+  "Yoga for Relationship Management",
+  "Yoga for Right Parenting",
+  "Yoga for Psychosomatic Issues",
+  "Yoga for Breath Management",
+  "Yoga for Emotional Stability",
+  "Meditation",
+  "Workshop on Asana",
+  "Workshop on Pranayama",
+  "Workshop on Mental Focus",
+  "How to Control Mind and Thought Process",
+  "Cleansing Techniques / Kriyas",
+  "Alignment Issues",
+  "Purpose of Life",
+  "Pre-Preparation for Marriage",
+  "How to Handle Life After Retirement",
+  "Yoga for Spinal Issues",
 ];
 
 const faqs = [
@@ -219,10 +218,17 @@ function AboutSuresh() {
             <div><strong>23</strong><span>Years of self<br />practice</span></div>
           </div>
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
-            <p className="eyebrow">Instructor 01</p>
-            <h1><em>Suresh.</em></h1>
-            <p className="about-suresh-lead">Suresh brings 23 years of self-practice and 13 years of teaching experience to helping students build strength, steadiness and awareness through consistent practice.</p>
-            <p>His classes bring together classical postures, breathwork and meditation in a way that is clear, respectful and grounded in everyday life. He believes progress begins by understanding the person—not by forcing the pose.</p>
+            <p className="eyebrow">About the founder</p>
+            <h1>Meet<br /><em>Mr. Suresh.</em></h1>
+            <p className="about-suresh-lead">Founder & Master Trainer, Suresh’s Yogalaya</p>
+            <p>Suresh is a dedicated Yoga Teacher, Martial Artist and State-Level Judo Player, committed to helping people achieve holistic health through the timeless wisdom of yoga.</p>
+            <p>His yoga journey began at the age of 13 with a deep passion for self-practice. Over the years, this passion evolved into a lifelong mission to inspire individuals to lead healthier, happier and more balanced lives.</p>
+            <p>While pursuing his B.Tech, his outstanding yoga demonstrations earned him the opportunity to teach yoga to the Head of the Institution. This boosted his confidence and became a stepping stone for his career.</p>
+            <p>To deepen his knowledge, he trained at one of the oldest yoga institutes, The Yoga Institute, Mumbai, and refined his skills at Bharath Thakur Artistic Yoga. During his career, he has conducted personalised yoga sessions for celebrities and workshops for clients including RDT, HPCL and Union Bank employees.</p>
+            <p>Suresh has worked with children, teenagers, adults, senior citizens, fitness enthusiasts, professionals and individuals dealing with stress, anxiety, hyperactivity and lifestyle-related challenges.</p>
+            <p>Out of his passion for yoga and his own experiences, he has innovated unique techniques that shape an outstanding teaching approach—combining traditional yogic principles with practical techniques to make yoga accessible and beneficial for everyone.</p>
+            <p>Inspired by his spiritual journey and a deep connection with nature, Suresh moved from Mumbai to Anantapur and founded Suresh’s Yogalaya. Today, the institute offers both offline and online programmes.</p>
+            <p>“Suresh believes that through yoga one can move from animal nature to human nature, and further to divine nature. With consistent effort, one can experience something beyond body and mind, helping us move towards consciousness and bliss.”</p>
             <div className="about-suresh-highlights" aria-label="Instructor teaching highlights">
               <span>Structured sessions</span>
               <span>Personal posture guidance</span>
@@ -477,7 +483,7 @@ export function App() {
 
         <Faq faqs={faqs} openFaq={openFaq} onToggle={(index) => setOpenFaq(openFaq === index ? -1 : index)} />
 
-        <Contact programs={programs} submitted={submitted} onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} onReset={() => setSubmitted(false)} />
+        <Contact programs={programs} workshops={workshops} submitted={submitted} onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} onReset={() => setSubmitted(false)} />
 
         <Location />
       </main>
