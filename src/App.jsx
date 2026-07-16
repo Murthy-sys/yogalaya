@@ -205,7 +205,7 @@ function AboutSuresh() {
       <main>
         <section className="about-suresh-hero instructor-profile instructor-profile-suresh">
           <div className="about-suresh-portrait instructor-portrait" data-reveal>
-            <img src="/assets/suresh-profile.jpeg" alt="Yoga instructor Suresh at an International Yoga Day event" decoding="async" />
+            <img src="/assets/suresh-profile-ceremony.png" alt="Suresh being honoured at an International Yoga Day event" decoding="async" />
             <div><strong>23</strong><span>Years of self<br />practice</span></div>
           </div>
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
@@ -240,7 +240,7 @@ function AboutSuresh() {
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
           <div className="about-suresh-portrait instructor-portrait" data-reveal>
-            <img src="/assets/gayatri-keerti-profile.jpeg" alt="Yoga instructor Gayatri Keerti at an International Yoga Day event" loading="lazy" decoding="async" />
+            <img src="/assets/gayatri-keerti-profile-ceremony.png" alt="Gayatri Keerti being honoured at an International Yoga Day event" loading="lazy" decoding="async" />
             <div className="instructor-role-badge"><span>Yoga instructor<br />Suresh’s Yogalaya</span></div>
           </div>
         </section>
