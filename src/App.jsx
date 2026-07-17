@@ -300,6 +300,27 @@ function AboutSuresh() {
             <div className="instructor-role-badge"><span>Yoga instructor<br />Suresh’s Yogalaya</span></div>
           </div>
         </section>
+        <section className="practice-archive" aria-labelledby="practice-archive-title">
+          <header className="practice-archive-heading" data-reveal>
+            <p className="eyebrow">From the practice archive</p>
+            <h2 id="practice-archive-title">A practice<br /><em>lived fully.</em></h2>
+            <p>Early moments from Suresh’s personal practice—a quiet record of discipline, exploration and joy in movement.</p>
+          </header>
+          <div className="practice-archive-gallery">
+            <figure className="practice-photo practice-photo-wide" data-reveal style={{ "--reveal-index": 0 }}>
+              <div className="practice-photo-frame"><img src="/assets/suresh-practice-seated-split.jpg" alt="Suresh holding a seated split during his personal yoga practice" loading="lazy" decoding="async" /></div>
+              <figcaption><span>01</span><p>Discipline in stillness</p></figcaption>
+            </figure>
+            <figure className="practice-photo practice-photo-tall" data-reveal style={{ "--reveal-index": 1 }}>
+              <div className="practice-photo-frame"><img src="/assets/suresh-practice-arm-balance.jpg" alt="Suresh demonstrating an advanced arm balance" loading="lazy" decoding="async" /></div>
+              <figcaption><span>02</span><p>Strength with control</p></figcaption>
+            </figure>
+            <figure className="practice-photo practice-photo-sky" data-reveal style={{ "--reveal-index": 2 }}>
+              <div className="practice-photo-frame"><img src="/assets/suresh-practice-open-sky.jpg" alt="Suresh standing beneath an open sky with his arms extended" loading="lazy" decoding="async" /></div>
+              <figcaption><span>03</span><p>Openness and ease</p></figcaption>
+            </figure>
+          </div>
+        </section>
       </main>
     </div>
   );

@@ -135,6 +135,29 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .instructor-profile-suresh .instructor-profile-copy > p strong { color: var(--ink); font-weight: 600; }
 .about-suresh-highlights { width: 100%; max-width: 620px; margin: 0 0 38px; border-top: 1px solid var(--line); }
 .about-suresh-highlights span { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 600; }
+.practice-archive { padding: clamp(105px, 12vw, 180px) 8vw; display: grid; grid-template-columns: minmax(250px, 30%) 1fr; gap: clamp(55px, 8vw, 130px); background: var(--paper); overflow: hidden; }
+.practice-archive-heading { position: sticky; top: 118px; align-self: start; }
+.practice-archive-heading h2 { margin: 0; color: var(--ink); font-size: clamp(54px, 5.2vw, 82px); line-height: 1.02; letter-spacing: -.04em; }
+.practice-archive-heading > p:last-child { max-width: 360px; margin: 34px 0 0; color: #60716d; font-size: 14px; line-height: 1.85; }
+.practice-archive-gallery { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(190px, .72fr); gap: clamp(22px, 3.5vw, 54px); align-items: start; }
+.practice-photo { margin: 0; }
+.practice-photo-wide { grid-column: 1 / -1; width: 92%; }
+.practice-photo-tall { grid-column: 2; grid-row: 2 / span 2; margin-top: clamp(40px, 7vw, 100px); }
+.practice-photo-sky { grid-column: 1; margin-top: clamp(85px, 11vw, 155px); }
+.practice-photo-frame { position: relative; overflow: hidden; background: #d8c2a5; }
+.practice-photo-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(145deg, rgba(213,154,67,.12), transparent 45%, rgba(12,41,43,.12)); mix-blend-mode: soft-light; transition: opacity .7s ease; }
+.practice-photo img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.82) contrast(.96); transform: scale(1.018); transition: transform 1.15s var(--ease-smooth), filter .8s ease; }
+.practice-photo-wide .practice-photo-frame { aspect-ratio: 1.55 / 1; }
+.practice-photo-wide img { object-position: center 48%; }
+.practice-photo-tall .practice-photo-frame { aspect-ratio: .57 / 1; }
+.practice-photo-tall img { object-position: center; }
+.practice-photo-sky .practice-photo-frame { aspect-ratio: 1.48 / .8; }
+.practice-photo-sky img { object-position: center; }
+.practice-photo:hover img { transform: scale(1.045); filter: saturate(.94) contrast(.99); }
+.practice-photo:hover .practice-photo-frame::after { opacity: .35; }
+.practice-photo figcaption { padding: 17px 0 0; display: grid; grid-template-columns: 38px 1fr; align-items: center; border-top: 1px solid transparent; color: var(--ink); }
+.practice-photo figcaption span { color: var(--gold); font-size: 9px; letter-spacing: .16em; }
+.practice-photo figcaption p { margin: 0; font-family: "Marcellus", serif; font-size: 17px; }
 .instructor-profile { border-bottom: 1px solid var(--line); }
 .instructor-profile-gayatri { grid-template-columns: 54% 46%; background: var(--paper); }
 .instructor-profile-gayatri .about-suresh-intro { padding-left: 10vw; }
@@ -150,7 +173,14 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 
   @supports (animation-timeline: view()) {
     .about-suresh-portrait > img { animation: portrait-focus linear both; animation-timeline: view(block); animation-range: entry 0% exit 100%; }
+    .practice-photo img { animation: practice-photo-drift linear both; animation-timeline: view(block); animation-range: entry 0% exit 100%; }
   }
+}
+
+@keyframes practice-photo-drift {
+  from { transform: scale(1.055) translate3d(0,-1.8%,0); }
+  50% { transform: scale(1.018) translate3d(0,0,0); }
+  to { transform: scale(1.055) translate3d(0,1.8%,0); }
 }
 
 @keyframes portrait-focus {
@@ -438,6 +468,16 @@ footer { background: var(--ink-deep); color: #d5dfdb; padding: 76px 8vw 28px; di
   .about-suresh-intro h1 { font-size: clamp(58px, 17vw, 76px); }
   .about-suresh-lead { margin-top: 32px; font-size: 24px; }
   .about-suresh-story { padding: 85px 22px; }
+  .practice-archive { padding: 88px 22px 100px; grid-template-columns: 1fr; gap: 58px; }
+  .practice-archive-heading { position: static; }
+  .practice-archive-heading h2 { font-size: 54px; }
+  .practice-archive-heading > p:last-child { margin-top: 27px; font-size: 13px; }
+  .practice-archive-gallery { grid-template-columns: 1fr; gap: 46px; }
+  .practice-photo-wide, .practice-photo-tall, .practice-photo-sky { width: 100%; grid-column: 1; grid-row: auto; margin-top: 0; }
+  .practice-photo-wide .practice-photo-frame { aspect-ratio: 1.28 / 1; }
+  .practice-photo-tall { width: 78%; justify-self: end; }
+  .practice-photo-sky { width: 88%; }
+  .practice-photo figcaption { padding-top: 14px; }
   .about-story-cards article, .about-story-cards article:nth-child(even) { margin-left: 0; padding: 29px 25px; }
   .about-story-cards h3 { font-size: 25px; }
   .programs { padding: 85px 22px; }

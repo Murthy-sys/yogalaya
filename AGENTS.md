@@ -38,3 +38,4 @@ When implementing from a selected generated mock, treat that image as the source
 - On mobile, defer below-the-fold section rendering with `content-visibility` and intrinsic-size placeholders; lazy-load and asynchronously decode non-critical imagery while keeping above-the-fold hero imagery eager.
 - Keep the displayed brand logo close to its rendered resolution and serve the hero photograph as a quality-balanced compressed JPEG to avoid Lighthouse oversized-image and inefficient-image-delivery warnings.
 - Self-host the Latin WOFF2 builds of DM Sans and Marcellus with `font-display: swap`; do not restore a render-blocking Google Fonts stylesheet import.
+- Keep the three supplied early-practice photographs on the About Suresh route as an editorial, asymmetrical archive gallery with calm scroll motion and reduced-motion support.
