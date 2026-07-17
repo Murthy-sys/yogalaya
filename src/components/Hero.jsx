@@ -4,6 +4,7 @@ export function Hero() {
   return <section className="hero" id="home">
     <div className="hero-copy" data-reveal>
       <p className="eyebrow">A place for health & self transformation</p>
+      <p className="hero-compact-copy">Trusted yoga center in Anantapur for traditional yoga, pranayama, meditation, therapeutic yoga, workshops, and online yoga classes.</p>
       <h1>Come home<br />to your <em>body.</em></h1>
       <div className="hero-reflections" aria-label="Yoga reflections">
         <p className="hero-reflection hero-reflection-temple">If your body is a temple, your breath <span role="img" aria-label="lungs">🫁</span> will be your god.</p>
