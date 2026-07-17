@@ -9,25 +9,58 @@ import { Reviews } from "./components/Reviews";
 import { Faq } from "./components/Faq";
 import { Contact } from "./components/Contact";
 import { Location } from "./components/Location";
+import { ProgramDetail } from "./components/ProgramDetail";
 
 const programs = [
   {
     no: "01",
-    title: "Foundations of Yoga",
-    text: "A considered introduction to asana, breath and alignment for a steady, confident practice.",
-    meta: "Beginners · 60 minutes",
+    title: "Uniqueness of Suresh Yogalaya",
+    slug: "uniqueness-of-suresh-yogalaya",
+    text: "A thoughtful approach to yoga that brings together movement, breath, awareness and everyday wellbeing.",
+    meta: "A holistic practice",
+    eyebrow: "The Yogalaya approach",
+    intro: "Yoga here is approached as more than physical exercise. Each practice brings movement, breath and awareness together so students can build a steadier relationship with their body and mind.",
+    points: ["Attentive guidance for every practitioner", "Asana, breath and awareness in one practice", "A calm, disciplined and supportive environment"],
   },
   {
     no: "02",
-    title: "Therapeutic Yoga",
-    text: "Gentle, individual guidance shaped around mobility, recovery and everyday wellbeing.",
-    meta: "Personal sessions · 45 minutes",
+    title: "Offline classes",
+    slug: "offline-classes",
+    text: "In-person yoga sessions with attentive guidance at Suresh’s Yogalaya in Ramnagar, Anantapur.",
+    meta: "At the Yogalaya",
+    eyebrow: "Practise together",
+    intro: "Join Suresh in person at the Ramnagar studio for clear demonstrations, thoughtful corrections and a consistent practice shaped around the students in the room.",
+    points: ["In-person observation and posture guidance", "Morning and evening centre timings", "Studio practice in Ramnagar, Anantapur"],
   },
   {
     no: "03",
-    title: "Pranayama & Meditation",
-    text: "Traditional breathwork and stillness practices to help settle the mind and restore energy.",
-    meta: "All levels · 40 minutes",
+    title: "Kids Yoga",
+    slug: "kids-yoga",
+    text: "Engaging yoga sessions designed to help children develop balance, focus and confidence.",
+    meta: "For young practitioners",
+    eyebrow: "Growing with awareness",
+    intro: "Kids Yoga introduces movement, balance and breath in an engaging, age-appropriate way. Sessions encourage children to listen to their bodies and develop focus without pressure.",
+    points: ["Playful movement and balance", "Simple breathing and attention practices", "A supportive space to build confidence"],
+  },
+  {
+    no: "04",
+    title: "Personalised online classes for abroad",
+    slug: "personalised-online-classes-abroad",
+    text: "Individual online guidance for students living abroad, shaped around their needs and schedule.",
+    meta: "Online · International",
+    eyebrow: "Personal guidance, wherever you are",
+    intro: "Students living abroad can practise directly with Suresh through individual online sessions planned around their goals, experience, time zone and available space.",
+    points: ["One-to-one online instruction", "Timings arranged after discussion", "Practice adapted to individual needs"],
+  },
+  {
+    no: "05",
+    title: "One-one counselling session",
+    slug: "one-one-counselling",
+    text: "A private conversation offering personal guidance for greater clarity, balance and wellbeing.",
+    meta: "Private session",
+    eyebrow: "A private conversation",
+    intro: "A confidential one-to-one conversation for people seeking thoughtful guidance around personal wellbeing, clarity and balance in everyday life.",
+    points: ["A calm space to speak openly", "Individual attention and practical guidance", "Sessions arranged privately"],
   },
 ];
 
@@ -259,7 +292,12 @@ export function App() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [footerVisible, setFooterVisible] = useState(false);
-  const [route, setRoute] = useState(() => window.location.hash === "#/about-suresh" ? "about-suresh" : "home");
+  const getRoute = () => {
+    if (window.location.hash === "#/about-suresh") return "about-suresh";
+    if (window.location.hash.startsWith("#/program/")) return "program";
+    return "home";
+  };
+  const [route, setRoute] = useState(getRoute);
   const footerRef = useRef(null);
   const reviewTouchStart = useRef(null);
 
@@ -276,7 +314,7 @@ export function App() {
 
   useEffect(() => {
     const onRouteChange = () => {
-      const nextRoute = window.location.hash === "#/about-suresh" ? "about-suresh" : "home";
+      const nextRoute = getRoute();
       const updateRoute = () => {
         flushSync(() => setRoute(nextRoute));
         window.scrollTo(0, 0);
@@ -344,6 +382,19 @@ export function App() {
       <div className="site-shell">
         <SiteNavigation menuOpen={menuOpen} scrolled={scrolled} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={closeMenu} />
         <AboutSuresh />
+        <FloatingWhatsApp hidden={footerVisible} />
+        <SiteFooter footerRef={footerRef} />
+      </div>
+    );
+  }
+
+  if (route === "program") {
+    const slug = window.location.hash.replace("#/program/", "");
+    const program = programs.find((item) => item.slug === slug);
+    return (
+      <div className="site-shell">
+        <SiteNavigation menuOpen={menuOpen} scrolled={scrolled} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={closeMenu} />
+        <ProgramDetail program={program} />
         <FloatingWhatsApp hidden={footerVisible} />
         <SiteFooter footerRef={footerRef} />
       </div>
