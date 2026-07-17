@@ -210,23 +210,23 @@ function AboutSuresh() {
           </div>
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">About the founder</p>
-            <h1>Meet<br /><em>Mr. Suresh.</em></h1>
+            <h1>Meet<br /><em>Mr. Suresh</em></h1>
             <p className="about-suresh-lead">Founder & Master Trainer, Suresh’s Yogalaya</p>
-            <p>Suresh is a dedicated <strong className="profile-highlight">Yoga Teacher, Martial Artist and State-Level Judo Player</strong>, committed to helping people achieve holistic health through the timeless wisdom of yoga.</p>
+            <p>Suresh is a dedicated Yoga Teacher, Martial Artist and State-Level Judo Player, committed to help people achieve holistic health through the timeless wisdom of yoga.</p>
             <p>His yoga journey began at the age of 13 with a deep passion for self-practice. Over the years, this passion evolved into a lifelong mission to inspire individuals to lead healthier, happier and more balanced lives.</p>
-            <p>While pursuing his B.Tech, his outstanding yoga demonstrations earned him the opportunity to teach yoga to the Head of the Institution. This boosted his confidence and became a stepping stone for his career.</p>
-            <p>To deepen his knowledge, he trained at one of the oldest yoga institutes, <strong className="profile-highlight">The Yoga Institute, Mumbai</strong>, and refined his skills at <strong className="profile-highlight">Bharath Thakur Artistic Yoga</strong>. During his career, he has conducted <strong className="profile-highlight">personalized yoga sessions for celebrities</strong> and workshops for clients including <strong className="profile-highlight">RDT, HPCL and Union Bank employees</strong>.</p>
+            <p>While pursuing his B.Tech, with his outstanding yoga demonstration, he earned the opportunity to teach yoga to the Head of the Institution. This boosted his confidence and became stepping stone for his career.</p>
+            <p>To deepen his knowledge, he got trained at one of the oldest yoga institutes The Yoga Institute, Mumbai. Also, he refined his skills at Bharath Thakur Artistic Yoga. During his career, he has conducted personalized yoga sessions for celebrities and workshops for clients like RDT, HPCL and Union Bank employees etc.</p>
             <p>Suresh has worked with children, teenagers, adults, senior citizens, fitness enthusiasts, professionals and individuals dealing with stress, anxiety, hyperactivity and lifestyle-related challenges.</p>
-            <p>Out of his passion for yoga and his own experiences, he has innovated unique techniques that shape an outstanding teaching approach—combining traditional yogic principles with practical techniques to make yoga accessible and beneficial for everyone.</p>
-            <p>Inspired by his spiritual journey and a deep connection with nature, Suresh moved from Mumbai to Anantapur and founded <strong className="profile-highlight">Anantapur Suresh’s Yogalaya</strong>. Today, the institute offers both <strong className="profile-highlight">offline and online programs</strong>.</p>
-            <p>“Suresh believes that through yoga one can move from <strong className="profile-highlight">animal nature to human nature, and further to divine nature</strong>. With consistent effort, one can experience something beyond body and mind, helping us move towards <strong className="profile-highlight">consciousness and bliss</strong>.”</p>
+            <p>Out of his passion for yoga and from his own experiences he has innovated few techniques which are unique, cannot be imitated. Hence his teaching approach is outstanding which combines traditional yogic principles with practical techniques, making it accessible and beneficial for everyone.</p>
+            <p>Inspired by his spiritual journey and a deep connection with nature, Suresh moved from Mumbai to Anantapur and founded Suresh’s Yogalaya. Today, the institute offers both offline and online programs.</p>
+            <p>“Suresh believes through yoga one can move from animal nature to human nature and further to divine nature. With consistent effort one can experience something beyond body and mind, helps to move towards consciousness/Bliss.”</p>
             <a className="primary-button" href="/#contact">Begin your practice <Arrow /></a>
           </div>
         </section>
         <section className="about-suresh-hero instructor-profile instructor-profile-gayatri">
           <div className="about-suresh-intro instructor-profile-copy" data-reveal data-reveal-delay="1">
             <p className="eyebrow">Instructor 02</p>
-            <h1>Meet<br /><em>Gayatri.</em></h1>
+            <h1>Meet<br /><em>Gayathri Keerthi</em></h1>
             <p className="about-suresh-lead">Yoga Instructor <span aria-hidden="true">|</span> M.Sc. in Yoga</p>
             <p>Gayatri is a passionate Yoga Instructor at Suresh Yogalaya whose journey into yoga began through her search for balance and well-being. Before entering the field of yoga, she worked as an IT Professional, where she experienced the challenges of managing a demanding career alongside family life.</p>
             <p>While looking for ways to support her child’s growth and improve her own physical and mental well-being, she discovered Suresh Yogalaya. Yoga transformed her life by helping her develop better physical health, mental clarity, emotional balance, and a deeper understanding of the connection between body, mind, and inner energy.</p>
