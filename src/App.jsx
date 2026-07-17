@@ -91,38 +91,61 @@ The journey is being wonderfully challenging and empowering. I think we don’t 
     detail: "Google review",
   },
   {
-    quote: `I came to know about Yogalaya from Facebook. I have been practicing yoga for the last six months, and my perception of yoga has completely changed. I was under the impression that yoga was only physical activity. Slowly, I realized from Yoga Master Suresh—who reiterates during training sessions—that yoga is a union of body and mind.
-
-Suresh’s in-depth knowledge, rich experience, and command of yoga are clearly visible in every aspect of training. He pays close attention to every individual, understands their needs, trains accordingly, and modifies the approach without losing the essence of yoga—making sure goals are met.
-
-Whenever a new asana or technique is taught, he explains its benefits. This improves a trainee’s yoga knowledge and motivates us to practice continuously. His slow and steady approach, with a long-term vision, is truly appreciable. He is very friendly and approachable, and answers every question with patience. These are his assets and make him different.
-
-One of my favorite quotes from him is: “Any vehicle needs maintenance; likewise, the human body also needs regular maintenance, which can be achieved with regular practice of yoga.”
-
-I would highly recommend Yogalaya and Suresh Master to anyone who wants to train, practice, and experience yoga. All the very best, and thank you for the valuable training provided so far!
-
-Positive: Communication, Quality, Professionalism.`,
-    name: "Ram",
-    detail: "Google review",
+    quote: `As a gynecologist, I often recommend exercise and lifestyle modifications to my patients, particularly those with PCOD. Personally, I’ve had a very positive experience with Suresh Yogalaya. What impressed me most was their individualized approach, tailoring each session to the unique needs of the person. Inspired by my father, I incorporated yoga into my own life and have seen its lasting benefits. I truly believe everyone should adopt a form of physical activity that is enjoyable and sustainable in the long term — not just as a treatment, but as a way of life.`,
+    name: "Sandhya Uday",
+    detail: "Google review · a year ago",
   },
   {
-    quote: `Embarking on a three-month journey with yoga has been a transformative experience. When I started, I was a bit skeptical about what yoga could offer, but it quickly became a cherished part of my daily routine.
+    quote: `When I joined Yogalay, I was struggling both personally and professionally and searching for someone to share my problems with, someone to console me when I was feeling low. I thought I needed external support to get through tough times, but this mindset only led to disappointment and deeper feelings of depression.
 
-I’ve had severe migraine pain for seven years, but through consistent yoga practice, I’ve been able to reduce it significantly. Yoga has helped me manage stress, relax my body, and find a sense of calm, which has been crucial in decreasing the frequency and intensity of my migraines.
+I have consulted four psychologists over an 18-month period, but their solutions were only temporary. After continuing with counselling, I have observed that it is not providing solution to the issues I’m facing.
 
-Over the past three months, I’ve noticed significant improvements in my physical health. My flexibility has increased considerably; poses that once seemed impossible now feel comfortable and natural. My strength, particularly in my core and upper body, has also improved, which has positively impacted other physical activities I engage in.
+But as I started practicing blind walk and following the guidance of Suresh Sir and Keerthi Mam, I realised I wasn’t in a good place—mentally or physically.
+Yoga isn’t a exercise; it’s as important as eating. Just like we eat every day, we should make yoga a regular part of our lives to help us handle both the world around us and the world inside our minds.
+I’m very grateful to have met such amazing people at Yogalay. Suresh Sir has helped me understand that we don’t need someone constantly behind us—we have the strength within ourselves.
+Here are a few changes I’ve noticed in myself since joining Yogalay:
+1. Better focus: My mind is much clearer and less distracted now.
+2. Saying “No”: I used to struggle with saying “No,” but now I handle it politely and respectfully.
+3. Calmer reactions: I no longer overreact or overthink situations; I deal with them more calmly.
+4. Emotional control: I’m a people person, and I used to get overwhelmed emotionally. Recently, when my brother came back from the US, I am happy that he came and I joined that moment. Same thing happened with one of my frd came from states. The last time he left India, I felt very sad. But when I met recently, I enjoyed the time we spent together, though I wasn’t attached to it.
+Whenever I face a challenge, Suresh Sir is the first person I turn to. Because of Suresh Sir/Mam, I see a better version of myself.
+Yogalay is more than just a yoga center—it’s a family. Once you join, you’ll miss the classes and the people, even when you’re away.`,
+    name: "Kalpana Korrapati",
+    detail: "Google review · edited a year ago",
+  },
+  {
+    quote: `Hi, this is Phanindra. I am ex software employee. I had to leave my software job as I was suffering with anxiety disorder and depression due to job stress. So I started going to different renowned psychologists and psychiatrists for my treatment in Anantapur/Hyderabad/Bangalore. Finally in Bangalore hospital I understood about my symptoms and my condition clearly. But I was not able to handle anxiety when it is triggered. So after few months I had to leave my job. Then after some months I got to know about Suresh Yogalay. Then I understood that some breathing techniques in yoga can handle anxiety as it is triggered by negative thought process in my job stress. I am very grateful to my gurus Suresh sir and Keerthana mam for understanding my situation clearly and taught me about yoga practices daily. I believe yoga can teach you certain breathing techniques which are taught in daily asanas can help in handling in anxiety triggered situations. So finally after I experienced yoga at Suresh Yogalay for 2-3 months I can say for sure that yoga can be a very helpful tool to deal with our ongoing daily real life challenges we face mentally, physically and emotionally. So I recommend Suresh Yogalay for better tomorrow for all of us.`,
+    name: "Vankadoth Phanindra",
+    detail: "Google review · a year ago",
+  },
+  {
+    quote: `A Gateway of Holistic Wellness, Self-Discovery and Unlocking Inner Potential
 
-One of the most surprising aspects of this journey has been the mental and emotional benefits. Yoga has taught me the importance of mindfulness and being present in the moment. The practice has become a form of moving meditation, helping me calm my mind and reduce stress. I find myself more patient and less reactive in challenging situations. The breathing techniques learned in yoga have also been invaluable, providing tools to manage anxiety and improve focus.
+As a Law Student and IIT Madras BS Degree student juggling the complexities of legal studies and striving for excellence. I stepped into Suresh Yogalay where I could cultivate balance and tap into my full potential.
 
-Yoga has toned my body, revealing strength and balance. The poses have not only sculpted my muscles, but also enhanced my flexibility and posture, creating a well-rounded transformation.
+Suresh Yogalay is not an average yoga studio; it's a sanctuary where individuals from all walks of life come together to nurture their minds, bodies, and spirits. Under the compassionate mentorship of Suresh Sir and Gayathri Ma'am, I've experienced remarkable growth in all aspects of my being.
 
-In just three months, yoga has brought a sense of bliss into my life that I didn’t know was possible. It has taught me that true happiness comes from within, through connection, mindfulness, and self-awareness. This experience has been nothing short of transformative, and I am excited to continue this journey, knowing that each practice brings me closer to this blissful state.
+At Suresh Yogalay, yoga goes beyond stretching and sweating; it's about nurturing every aspect of oneself. Under the caring guidance of the Masters, I've learned various yoga poses and breathing techniques that not only make me physically fitter but also leave me feeling more energized and balanced.
 
-Since practicing with Suresh and Keerthi, I have noticed significant improvements in my physical health, including increased flexibility and strength. The mental and emotional benefits have been equally profound, with a noticeable reduction in stress and an enhanced sense of well-being. Their teaching incorporates not just physical asanas, but also pranayama, meditation, and yoga philosophy, providing a comprehensive approach to wellness. An experienced teacher like Suresh Master brings authenticity to the practice, staying true to the roots of yoga and ensuring that students receive a genuine experience.
+Through Suresh Sir's unique teachings and techniques and his passion for spirituality is contagious, his guidance made a profound impact on my life. I feel more connected to myself and the world around me, and I've developed a greater sense of clarity and purpose. His teachings have opened my eyes to the infinite possibilities that exist within and around me, filling me with a sense of wonder and gratitude.
 
-I highly suggest trying yoga if you’re looking for a natural way to improve your physical and mental well-being. Yoga helps in finding balance, reducing stress, and fostering a deep sense of inner peace. Give it a try—you might find it becomes a vital part of your life. Overall, it was an eye-opening experience that introduced me to the benefits of yoga.`,
-    name: "Spandana",
-    detail: "Google review",
+In addition to Suresh Sir's teachings, Gayathri Ma'am's unwavering support and encouragement have been instrumental in my journey. Her gentle guidance and compassionate presence create a nurturing environment where students can thrive and grow.
+
+This Yogalay is unique as it focusses on the mind and soul. Through simple mindfulness practices and calming meditation sessions, I've discovered a newfound sense of peace and clarity. The Masters' wisdom has helped me see the beauty in the present moment and understand myself on a deeper level.
+
+In just two months, I've witnessed remarkable growth and transformation within myself. I feel more centered, grounded, and aligned with my true purpose. Suresh Yogalay has become more than just a yoga studio to me; it's a sanctuary where I can reconnect with myself, explore my potential, and cultivate a deeper sense of well-being and fulfillment.
+
+In conclusion, Suresh Yogalay is a gem in the heart of the city, offering a sanctuary for those seeking balance, growth, and inner peace. In simple terms, if you're looking for a place to unwind, recharge, and discover your inner strength, look no further than Suresh Yogalay. With its blend of physical fitness, spiritual wisdom, and supportive community, it's a gem worth exploring. Your mind, body, and soul will thank you for it.`,
+    name: "Lakshmi Nandan Karri",
+    detail: "Google review · 2 years ago",
+  },
+  {
+    quote: `Superb training
+I joined in this yoga class with mixed thoughts, when I joined in class I was 89kgs.. after 3 months Its really wondering me and I can't believe my self I am just 68 kgs... With in 3 months from obesity to normal weight OMG. I am really thankful to Suresh sir and mam for making me fit physically and mentally.
+
+Guys remember one think obesity/ over weight is the main reason for almost all health issues like High blood pressure, diabetis...etc..`,
+    name: "Sasidhar K",
+    detail: "Google review · 3 years ago",
   },
 ];
 
