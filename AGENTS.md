@@ -24,6 +24,8 @@ When implementing from a selected generated mock, treat that image as the source
 - The instructor is Suresh with 20+ years of yoga practice and teaching experience. Do not invent certifications or affiliations that the user has not supplied.
 - The Meet Suresh preview should link via “Know about me” to the dedicated `#/about-suresh` component containing his fuller story and experience.
 - Present testimonials as a compact, interactive editorial review block rather than oversized cards or a wall of quotes.
+- Keep testimonials focused on one single paper page at a time without a visible reviewer-name directory; preserve the featured review as page one, and use mirrored page turns with an outer-edge lift, diagonal corner curl, moving cast shadow, and flat settle for next/previous navigation.
+- Keep testimonial navigation as two icon-only arrows directly beneath and right-aligned with the testimonial paper; do not show a page counter or progress bar. Use compact section/card proportions with minimal whitespace and show only the reviewer name as a bottom-right signature—never “Google review,” review age, or edited-date metadata.
 - Use the actual top 10 reviews displayed on the Suresh S Yogalaya Justdial listing, and link the review card footer to that listing for all reviews.
 - Keep Parameswara Reddy M.'s full advocate testimonial as the featured default first review, followed by the 10 Justdial reviews without changing their order or content.
 - On mobile, present reviews as a centered swipeable card slider with blurred adjacent cards and polished depth transitions; keep the editorial directory layout on desktop.
