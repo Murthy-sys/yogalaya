@@ -41,3 +41,4 @@ When implementing from a selected generated mock, treat that image as the source
 - Keep the three supplied early-practice photographs on the About Suresh route as an editorial, asymmetrical archive gallery with calm scroll motion and reduced-motion support.
 - The hero uses the transparent Suresh meditation cutout on the same paper-colored background as the hero section; do not restore the photographed room background.
 - Present the location map as a modern interactive MapLibre vector map with a compact location header, one restrained studio label, branded marker, and clear address/directions hierarchy; keep the verified coordinates and Google Maps destination unchanged.
+- Use a light natural-oak background family across the app's light surfaces, preserving deep teal feature sections and gold accents for contrast.
