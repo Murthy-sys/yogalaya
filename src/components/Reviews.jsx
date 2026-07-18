@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./Arrow";
+import { reviewsSectionContent } from "../constants/testimonialConstants";
 
 export function Reviews({ testimonials, testimonial, expanded, dragging, dragOffset, onSelect, onToggleExpanded, onTouchStart, onTouchMove, onTouchCancel, justdialReviewsUrl }) {
   const [visibleIndex, setVisibleIndex] = useState(testimonial);
@@ -47,9 +48,9 @@ export function Reviews({ testimonials, testimonial, expanded, dragging, dragOff
 
   return <section className="reviews" id="reviews" data-reveal>
     <div className="reviews-heading">
-      <p className="eyebrow">Words from our community</p>
-      <h2>Practice,<br /><em>in their words.</em></h2>
-      <p>Reflections from students who have made Yogalaya part of their everyday lives.</p>
+      <p className="eyebrow">{reviewsSectionContent.eyebrow}</p>
+      <h2>{reviewsSectionContent.title}<br /><em>{reviewsSectionContent.emphasizedTitle}</em></h2>
+      <p>{reviewsSectionContent.description}</p>
       <a className="reviews-heading-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews <Arrow /></a>
     </div>
 

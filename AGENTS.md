@@ -30,6 +30,8 @@ When implementing from a selected generated mock, treat that image as the source
 - Keep Parameswara Reddy M.'s full advocate testimonial as the featured default first review, followed by the 10 Justdial reviews without changing their order or content.
 - On mobile, present reviews as a centered swipeable card slider with blurred adjacent cards and polished depth transitions; keep the editorial directory layout on desktop.
 - The About Suresh route presents two separate instructor profiles: Suresh first and Gayatri Keerti second, using their supplied International Yoga Day photographs.
+- On mobile, preserve the near-original aspect ratios of both International Yoga Day profile photographs so the ceremony subjects remain visible; avoid tall portrait crops and keep the role/experience badge compact and inset.
+- On the homepage, immediately after Meet Our Instructors and before “Care in every detail,” present the supplied June 28, 2021 The Hindu “Yoga gains online popularity” article as a prominent responsive editorial press section; do not show it on `#/about-suresh`.
 - Use the same shared header navigation, mobile menu, floating WhatsApp action, and full footer on every site route.
 - Treat mobile as the primary experience: favor smooth spring-like, GPU-friendly transitions, progressive view/scroll animation enhancements, responsive touch feedback, and full reduced-motion support.
 - Keep the mobile review section compact, with readable five-line previews and prominent navigation controls directly beneath the cards.
@@ -39,8 +41,10 @@ When implementing from a selected generated mock, treat that image as the source
 - Every route change must synchronously reset to the top inside the route transition; instructor portraits and copy use scroll-triggered mobile reveals on the About route.
 - On mobile, defer below-the-fold section rendering with `content-visibility` and intrinsic-size placeholders; lazy-load and asynchronously decode non-critical imagery while keeping above-the-fold hero imagery eager.
 - Keep the displayed brand logo close to its rendered resolution and serve the hero photograph as a quality-balanced compressed JPEG to avoid Lighthouse oversized-image and inefficient-image-delivery warnings.
+- Serve the About-route ceremony portraits and shared brand logo through responsive, display-sized WebP `srcset` variants; keep the original PNG files only as source assets and never reference them at runtime.
 - Self-host the Latin WOFF2 builds of DM Sans and Marcellus with `font-display: swap`; do not restore a render-blocking Google Fonts stylesheet import.
 - Keep the three supplied early-practice photographs on the About Suresh route as an editorial, asymmetrical archive gallery with calm scroll motion and reduced-motion support.
+- Keep section copy and repeatable display data in focused modules under `src/constants`; keep `App.jsx` limited to route, state, and page composition responsibilities.
 - The hero uses the transparent Suresh meditation cutout on the same paper-colored background as the hero section; do not restore the photographed room background.
 - Present the location map as a modern interactive MapLibre vector map with a compact location header, one restrained studio label, branded marker, and clear address/directions hierarchy; keep the verified coordinates and Google Maps destination unchanged.
 - Use a light natural-oak background family across the app's light surfaces, preserving deep teal feature sections and gold accents for contrast.

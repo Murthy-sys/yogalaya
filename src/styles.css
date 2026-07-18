@@ -102,6 +102,7 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .hero-visual::after { content: ""; position: absolute; inset: auto 8% 3% 12%; height: 1px; background: rgba(23,63,66,.16); }
 .hero-note { position: absolute; z-index: 2; right: 6%; bottom: 7%; color: var(--ink); border-left: 1px solid rgba(23,63,66,.35); padding-left: 20px; line-height: 1.45; font-family: "Marcellus", serif; letter-spacing: .03em; }
 .hero-note span { display: block; font-family: "DM Sans"; font-size: 10px; letter-spacing: .2em; margin-bottom: 10px; }
+.hero-note .hero-note-text { display: inline; margin: 0; font-family: "Marcellus", serif; font-size: inherit; letter-spacing: .03em; }
 .scroll-note { position: absolute; z-index: 3; left: 3.5vw; bottom: 42px; writing-mode: vertical-rl; transform: rotate(180deg); text-decoration: none; text-transform: uppercase; letter-spacing: .2em; font-size: 9px; }
 
 .instructor { scroll-margin-top: 80px; display: grid; grid-template-columns: 46% 54%; min-height: 900px; background: var(--cream); }
@@ -139,6 +140,17 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .instructor-profile-suresh .instructor-profile-copy > p strong { color: var(--ink); font-weight: 600; }
 .about-suresh-highlights { width: 100%; max-width: 620px; margin: 0 0 38px; border-top: 1px solid var(--line); }
 .about-suresh-highlights span { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 600; }
+.about-press-archive { padding: clamp(90px, 10vw, 150px) 8vw; display: grid; grid-template-columns: minmax(250px, 31%) 1fr; gap: clamp(50px, 8vw, 120px); align-items: start; background: var(--ink); color: white; overflow: hidden; }
+.about-press-heading { position: sticky; top: 118px; align-self: start; }
+.about-press-heading .eyebrow { color: #afc0b8; }
+.about-press-heading h2 { margin: 0; font-size: clamp(48px, 4.8vw, 74px); line-height: 1.04; letter-spacing: -.04em; }
+.about-press-heading > p:not(.eyebrow) { max-width: 350px; margin: 30px 0 0; color: #b3c1bc; font-size: 13px; line-height: 1.8; }
+.about-press-meta { margin-top: 38px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18); display: flex; justify-content: space-between; gap: 18px; color: var(--gold); font-size: 8px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.about-press-paper { position: relative; isolation: isolate; width: min(100%, 680px); justify-self: center; padding: 14px; background: #f2eee5; display: block; color: var(--ink-deep); text-decoration: none; box-shadow: 13px 16px 0 rgba(244,234,216,.13), 25px 29px 0 rgba(213,154,67,.08), 0 40px 90px rgba(2,13,14,.42); transform: rotate(.35deg); transition: transform .85s var(--ease-spring), box-shadow .65s ease; }
+.about-press-paper::before { content: ""; position: absolute; z-index: -1; inset: 8px -10px -12px 8px; border: 1px solid rgba(213,154,67,.2); background: #dcd5c8; transform: rotate(-.8deg); }
+.about-press-paper:hover { transform: rotate(0) translate3d(0,-6px,0); box-shadow: 15px 20px 0 rgba(244,234,216,.15), 28px 34px 0 rgba(213,154,67,.09), 0 52px 105px rgba(2,13,14,.48); }
+.about-press-paper img { width: 100%; height: auto; display: block; border: 1px solid rgba(12,41,43,.1); filter: contrast(1.02) saturate(.88); }
+.about-press-paper > span { display: flex; min-height: 48px; align-items: center; justify-content: flex-end; color: #687671; font-size: 8px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .practice-archive { padding: clamp(105px, 12vw, 180px) 8vw; display: grid; grid-template-columns: minmax(250px, 30%) 1fr; gap: clamp(55px, 8vw, 130px); background: var(--paper); overflow: hidden; }
 .practice-archive-heading { position: sticky; top: 118px; align-self: start; }
 .practice-archive-heading h2 { margin: 0; color: var(--ink); font-size: clamp(54px, 5.2vw, 82px); line-height: 1.02; letter-spacing: -.04em; }
@@ -493,6 +505,7 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .location-address { width: 100%; margin: 36px 0 40px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .location-address > span { display: block; margin-bottom: 12px; color: #70827b; font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
 .location-address p { margin: 0; color: #526665; line-height: 1.85; }
+.location-address p > span { display: block; }
 
 .whatsapp-link { position: fixed; right: clamp(18px, 3vw, 42px); bottom: clamp(18px, 3vw, 38px); z-index: 45; display: grid; place-items: center; width: 54px; height: 54px; padding: 12px; border-radius: 50%; background: var(--ink-deep); color: white; text-decoration: none; box-shadow: 0 12px 30px rgba(12,41,43,.2); transition: transform .25s ease, background .25s ease, opacity .25s ease, visibility .25s ease; }
 .whatsapp-link svg { width: 29px; height: 29px; fill: currentColor; }
@@ -606,20 +619,30 @@ footer { background: var(--ink-deep); color: #d5dfdb; padding: 76px 8vw 28px; di
   .about-suresh-hero { grid-template-columns: 1fr; min-height: 0; }
   .instructor-profile-gayatri { display: flex; flex-direction: column; }
   .instructor-profile-gayatri .instructor-portrait { order: -1; }
-  .about-suresh-portrait { height: 75svh; min-height: 0; }
+  .about-suresh-portrait { height: auto; min-height: 0; }
+  .instructor-profile-suresh .about-suresh-portrait { aspect-ratio: 1278 / 1228; }
+  .instructor-profile-gayatri .about-suresh-portrait { aspect-ratio: 1376 / 1150; }
   .about-suresh-portrait[data-reveal] { transform: translate3d(0,24px,0) scale(1.025); clip-path: inset(5% 0 5% 0 round 22px); }
   .about-suresh-portrait[data-reveal].is-visible { transform: none; clip-path: inset(0 round 0); }
   .about-suresh-intro[data-reveal] { transform: translate3d(0,30px,0); }
   .about-suresh-intro[data-reveal].is-visible { transform: none; }
-  .instructor-profile-suresh .instructor-portrait > img { object-position: 29% 76%; }
-  .instructor-profile-gayatri .instructor-portrait > img { object-position: 48% 75%; }
-  .about-suresh-portrait > div { padding: 21px 23px; }
-  .about-suresh-portrait strong { font-size: 42px; }
+  .instructor-profile-suresh .instructor-portrait > img { object-position: center; }
+  .instructor-profile-gayatri .instructor-portrait > img { object-position: center; }
+  .about-suresh-portrait > div { right: 14px; bottom: 14px; padding: 16px 18px; }
+  .about-suresh-portrait strong { font-size: 36px; }
+  .about-suresh-portrait span { padding-left: 13px; font-size: 7px; }
   .about-suresh-intro { padding: 82px 22px 92px; }
   .instructor-profile-gayatri .about-suresh-intro { padding-left: 22px; }
   .about-suresh-intro h1 { font-size: clamp(58px, 17vw, 76px); }
   .about-suresh-lead { margin-top: 32px; font-size: 24px; }
   .about-suresh-story { padding: 85px 22px; }
+  .about-press-archive { padding: 72px 22px 84px; grid-template-columns: 1fr; gap: 46px; }
+  .about-press-heading { position: static; }
+  .about-press-heading h2 { font-size: 48px; }
+  .about-press-heading > p:not(.eyebrow) { margin-top: 24px; font-size: 12px; }
+  .about-press-meta { margin-top: 28px; }
+  .about-press-paper { width: calc(100% - 8px); padding: 8px; box-shadow: 7px 9px 0 rgba(244,234,216,.13), 13px 16px 0 rgba(213,154,67,.08), 0 28px 58px rgba(2,13,14,.38); }
+  .about-press-paper > span { min-height: 39px; font-size: 7px; }
   .practice-archive { padding: 88px 22px 100px; grid-template-columns: 1fr; gap: 58px; }
   .practice-archive-heading { position: static; }
   .practice-archive-heading h2 { font-size: 54px; }

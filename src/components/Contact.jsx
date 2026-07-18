@@ -1,5 +1,18 @@
 import { Arrow } from "./Arrow";
+import { contactContent } from "../constants/contactConstants";
 
 export function Contact({ programs, workshops, submitted, onSubmit, onReset }) {
-  return <section className="contact" id="contact"><div className="contact-copy" data-reveal><p className="eyebrow">Your first step</p><h2>Begin where<br />you <em>are.</em></h2><div className="contact-invocation"><strong>Atha yogānuśāsanam</strong><span lang="sa">(अथ योगानुशासनम्)</span><span>Now Yoga</span><span>(Start from where you are.....)</span></div><div className="contact-details"><span>Online group sessions · 6:00–7:05 AM</span><span>Monday · Wednesday · Friday</span><span>Online personal sessions available — timings can be arranged after discussion.</span><span>Centre timings · 6:00–7:00 AM · 7:00–8:00 AM · 5:00–6:00 PM</span><span>Monday · Tuesday · Wednesday · Thursday · Friday</span></div></div>{submitted ? <div className="form-success" role="status"><span>Thank you.</span><h3>Your practice begins here.</h3><p>We’ll be in touch shortly to help choose your first session.</p><button onClick={onReset}>Send another enquiry</button></div> : <form data-reveal data-reveal-delay="1" onSubmit={onSubmit}><label>Name<input type="text" name="name" placeholder="Your name" required /></label><label>Phone<input type="tel" name="phone" placeholder="Your phone number" required /></label><label>I’m interested in<select name="program" defaultValue=""><option value="" disabled>Choose a programme or workshop</option><optgroup label="Programmes">{programs.map(({ title }) => <option key={title}>{title}</option>)}</optgroup><optgroup label="Workshops">{workshops.map((workshop) => <option key={workshop}>{workshop}</option>)}</optgroup></select></label><label>Anything we should know?<textarea name="message" rows="3" placeholder="Tell us about your goals or experience" /></label><button className="primary-button" type="submit">Begin your journey <Arrow /></button></form>}</section>;
+  return <section className="contact" id="contact">
+    <div className="contact-copy" data-reveal>
+      <p className="eyebrow">{contactContent.eyebrow}</p>
+      <h2>{contactContent.title}<br />{contactContent.titleLineTwo} <em>{contactContent.emphasizedTitle}</em></h2>
+      <div className="contact-invocation">
+        <strong>{contactContent.invocation[0]}</strong>
+        <span lang="sa">{contactContent.invocation[1]}</span>
+        {contactContent.invocation.slice(2).map((line) => <span key={line}>{line}</span>)}
+      </div>
+      <div className="contact-details">{contactContent.details.map((line) => <span key={line}>{line}</span>)}</div>
+    </div>
+    {submitted ? <div className="form-success" role="status"><span>Thank you.</span><h3>Your practice begins here.</h3><p>We’ll be in touch shortly to help choose your first session.</p><button onClick={onReset}>Send another enquiry</button></div> : <form data-reveal data-reveal-delay="1" onSubmit={onSubmit}><label>Name<input type="text" name="name" placeholder="Your name" required /></label><label>Phone<input type="tel" name="phone" placeholder="Your phone number" required /></label><label>I’m interested in<select name="program" defaultValue=""><option value="" disabled>Choose a programme or workshop</option><optgroup label="Programmes">{programs.map(({ title }) => <option key={title}>{title}</option>)}</optgroup><optgroup label="Workshops">{workshops.map((workshop) => <option key={workshop}>{workshop}</option>)}</optgroup></select></label><label>Anything we should know?<textarea name="message" rows="3" placeholder="Tell us about your goals or experience" /></label><button className="primary-button" type="submit">Begin your journey <Arrow /></button></form>}
+  </section>;
 }
