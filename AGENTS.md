@@ -39,3 +39,5 @@ When implementing from a selected generated mock, treat that image as the source
 - Keep the displayed brand logo close to its rendered resolution and serve the hero photograph as a quality-balanced compressed JPEG to avoid Lighthouse oversized-image and inefficient-image-delivery warnings.
 - Self-host the Latin WOFF2 builds of DM Sans and Marcellus with `font-display: swap`; do not restore a render-blocking Google Fonts stylesheet import.
 - Keep the three supplied early-practice photographs on the About Suresh route as an editorial, asymmetrical archive gallery with calm scroll motion and reduced-motion support.
+- The hero uses the transparent Suresh meditation cutout on the same paper-colored background as the hero section; do not restore the photographed room background.
+- Present the location map as a modern interactive MapLibre vector map with a compact location header, one restrained studio label, branded marker, and clear address/directions hierarchy; keep the verified coordinates and Google Maps destination unchanged.
