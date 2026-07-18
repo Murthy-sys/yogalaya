@@ -53,12 +53,20 @@ export function App() {
   useEffect(() => {
     const onRouteChange = () => {
       const nextRoute = getRoute();
+      const targetId = window.location.hash.slice(1);
+      const isSectionNavigation = nextRoute === "home" && targetId && !targetId.startsWith("/");
       const updateRoute = () => {
         flushSync(() => setRoute(nextRoute));
-        window.scrollTo(0, 0);
+        if (isSectionNavigation) {
+          requestAnimationFrame(() => {
+            document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+          });
+        } else {
+          window.scrollTo(0, 0);
+        }
       };
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (document.startViewTransition && !reduceMotion) document.startViewTransition(updateRoute);
+      if (document.startViewTransition && !reduceMotion && !isSectionNavigation) document.startViewTransition(updateRoute);
       else updateRoute();
     };
     window.addEventListener("hashchange", onRouteChange);

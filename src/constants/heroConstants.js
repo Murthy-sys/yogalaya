@@ -1,6 +1,6 @@
 export const heroContent = {
   eyebrow: "A place for health & self transformation",
-  compactCopy: "Trusted yoga center in Anantapur for traditional yoga, pranayama, meditation, therapeutic yoga, workshops, and online yoga classes.",
+  compactCopy: "Trusted yoga center in Anantapur for Modern Traditional Yoga, pranayama, meditation, therapeutic yoga, workshops, and online and offline yoga classes.",
   title: "Come home",
   titleLineTwo: "to your",
   emphasizedTitle: "body.",
