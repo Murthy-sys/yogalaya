@@ -15,6 +15,8 @@ export function ProgramDetail({ program }) {
       </div>
       <div className="program-detail-copy" data-reveal data-reveal-delay="1">
         <p className="program-detail-lead">{program.intro}</p>
+        {program.detailSection && <div className="program-detail-editorial"><h2>{program.detailSection.title}</h2>{program.detailSection.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
+        {program.schedule && <div className="program-detail-schedule"><span>{program.classFormat}</span><strong>{program.schedule}</strong></div>}
         <div className="program-detail-points">{program.points.map((point, index) => <div key={point}><span>{String(index + 1).padStart(2, "0")}</span><p>{point}</p></div>)}</div>
         <a className="primary-button" href="#contact">Enquire about this programme <Arrow /></a>
       </div>

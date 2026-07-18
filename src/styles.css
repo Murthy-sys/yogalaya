@@ -240,6 +240,9 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .program-number { font-size: 10px; letter-spacing: .18em; color: var(--gold); align-self: start; margin-top: 44px; }
 .program-card h3 { font-size: 28px; margin: 0 0 12px; }
 .program-card p { margin: 0; color: #b9c7c2; line-height: 1.65; font-size: 14px; max-width: 390px; }
+.program-availability { margin-top: 15px; display: flex; flex-direction: column; gap: 5px; }
+.program-availability strong { color: var(--gold); font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.program-availability span { max-width: 430px; color: #d4ddd9; font-size: 11px; line-height: 1.55; }
 .program-card .program-meta { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #90a49c; }
 .program-arrow { border: 1px solid rgba(255,255,255,.28); border-radius: 50%; width: 46px; height: 46px; display: grid; place-items: center; transition: transform .58s var(--ease-spring), background .35s ease, border-color .35s ease, color .35s ease; }
 .program-card:hover .program-arrow { background: var(--gold); border-color: var(--gold); transform: rotate(-18deg) scale(1.06); }
@@ -254,6 +257,13 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .program-detail-heading h1 { max-width: 650px; margin: 0; font-size: clamp(52px, 5.6vw, 88px); line-height: 1.02; letter-spacing: -.045em; }
 .program-detail-copy { padding: clamp(80px, 10vw, 145px) 8vw; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .program-detail-lead { max-width: 680px; margin: 0 0 52px; color: var(--ink); font-family: "Marcellus", serif; font-size: clamp(24px, 2.3vw, 34px); line-height: 1.5; }
+.program-detail-editorial { width: 100%; max-width: 680px; margin: 0 0 48px; padding-top: 34px; border-top: 1px solid var(--line); }
+.program-detail-editorial h2 { margin: 0 0 24px; color: var(--ink); font-size: clamp(30px, 2.6vw, 42px); font-weight: 400; line-height: 1.15; letter-spacing: -.025em; }
+.program-detail-editorial p { margin: 0 0 17px; color: #536763; font-size: 14px; line-height: 1.82; }
+.program-detail-editorial p:last-child { margin-bottom: 0; }
+.program-detail-schedule { width: 100%; max-width: 650px; margin: -22px 0 38px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; border-left: 2px solid var(--gold); background: rgba(213,154,67,.1); }
+.program-detail-schedule span { color: var(--gold); font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.program-detail-schedule strong { color: var(--ink); font-family: "Marcellus", serif; font-size: 17px; font-weight: 400; line-height: 1.55; }
 .program-detail-points { width: 100%; max-width: 650px; margin-bottom: 45px; border-top: 1px solid var(--line); }
 .program-detail-points > div { display: grid; grid-template-columns: 50px 1fr; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .program-detail-points span { color: var(--gold); font-size: 9px; letter-spacing: .14em; }
@@ -458,6 +468,7 @@ em { color: var(--gold); font-style: italic; font-weight: 400; }
 .faq-answer { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .45s cubic-bezier(.22,1,.36,1), opacity .3s ease; }
 .faq-answer > div { overflow: hidden; }
 .faq-answer p { margin: -6px 54px 26px 0; color: #63736f; line-height: 1.8; font-size: 14px; transform: translateY(-8px); transition: transform .45s cubic-bezier(.22,1,.36,1); }
+.faq-answer p + p { margin-top: -12px; }
 .faq-item.is-open .faq-answer { grid-template-rows: 1fr; opacity: 1; }
 .faq-item.is-open .faq-answer p { transform: none; }
 .faq-item.is-open button { color: var(--gold); }

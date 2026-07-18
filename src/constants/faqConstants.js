@@ -5,6 +5,14 @@ export const faqs = [
   { question: "How do I reserve a class or workshop?", answer: "Send us a WhatsApp message with the class or workshop you are interested in. We will confirm the schedule and availability directly." },
   { question: "Where is Suresh’s Yogalaya located?", answer: "We are on MeeSeva Road in Ramnagar, opposite the MeeSeva office, Anantapur, Andhra Pradesh 515004." },
   { question: "What is the difference between yoga and gym?", answer: "We are not just a physical body visible to the eyes. We are body, mind, emotions, breath, energy and consciousness. Yoga itself means union: helping all these dimensions function as one unit, with no friction or the least possible friction. It is up to you whether to work only on the physical body, or to work across many dimensions and explore the fullest potential of your life." },
+  {
+    question: "Why Choose Suresh Yogalaya?",
+    answer: [
+      "At Suresh Yogalaya, we offer a holistic approach to well-being, serving as a one-stop destination for those who are genuinely committed to understanding their body, mind, and breath, and who aspire to elevate their consciousness.",
+      "Guided by experienced teachers with deep insights into the physical, mental, emotional, and spiritual dimensions of life, you will receive personalized guidance tailored to your individual journey. Through consistent practice, you will develop greater clarity, a transformed perspective on life, a deeper understanding of yourself and the people around you.",
+      "This will help to unlock your true potential, cultivate inner awareness and gradually experience meditativeness and inner bliss.",
+    ],
+  },
 ];
 
 export const faqSectionContent = {
