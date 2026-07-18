@@ -10,7 +10,7 @@ export const programs = [
   //   points: ["Attentive guidance for every practitioner", "Asana, breath and awareness in one practice", "A calm, disciplined and supportive environment"],
   // },
   {
-    no: "02",
+    no: "01",
     title: "Online and Offline classes",
     slug: "offline-classes",
     text: "In-person yoga sessions with attentive guidance at Suresh’s Yogalaya in Ramnagar, Anantapur.",
@@ -30,7 +30,7 @@ export const programs = [
     points: [],
   },
   {
-    no: "03",
+    no: "02",
     title: "Kids Yoga",
     slug: "kids-yoga",
     text: "Engaging yoga sessions designed to help children develop balance, focus and confidence.",
@@ -51,7 +51,7 @@ export const programs = [
     points: [],
   },
   {
-    no: "05",
+    no: "03",
     title: "One-one counselling session",
     slug: "one-one-counselling",
     text: "A private conversation offering personal guidance for greater clarity, balance and wellbeing.",
