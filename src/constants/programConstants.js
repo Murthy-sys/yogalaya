@@ -1,0 +1,58 @@
+export const programs = [
+  {
+    no: "01",
+    title: "Uniqueness of Suresh Yogalaya",
+    slug: "uniqueness-of-suresh-yogalaya",
+    text: "A thoughtful approach to yoga that brings together movement, breath, awareness and everyday wellbeing.",
+    meta: "A holistic practice",
+    eyebrow: "The Yogalaya approach",
+    intro: "Yoga here is approached as more than physical exercise. Each practice brings movement, breath and awareness together so students can build a steadier relationship with their body and mind.",
+    points: ["Attentive guidance for every practitioner", "Asana, breath and awareness in one practice", "A calm, disciplined and supportive environment"],
+  },
+  {
+    no: "02",
+    title: "Offline classes",
+    slug: "offline-classes",
+    text: "In-person yoga sessions with attentive guidance at Suresh’s Yogalaya in Ramnagar, Anantapur.",
+    meta: "At the Yogalaya",
+    eyebrow: "Practise together",
+    intro: "Join Suresh in person at the Ramnagar studio for clear demonstrations, thoughtful corrections and a consistent practice shaped around the students in the room.",
+    points: ["In-person observation and posture guidance", "Morning and evening centre timings", "Studio practice in Ramnagar, Anantapur"],
+  },
+  {
+    no: "03",
+    title: "Kids Yoga",
+    slug: "kids-yoga",
+    text: "Engaging yoga sessions designed to help children develop balance, focus and confidence.",
+    meta: "For young practitioners",
+    eyebrow: "Growing with awareness",
+    intro: "Kids Yoga introduces movement, balance and breath in an engaging, age-appropriate way. Sessions encourage children to listen to their bodies and develop focus without pressure.",
+    points: ["Playful movement and balance", "Simple breathing and attention practices", "A supportive space to build confidence"],
+  },
+  {
+    no: "04",
+    title: "Personalised online classes for abroad",
+    slug: "personalised-online-classes-abroad",
+    text: "Individual online guidance for students living abroad, shaped around their needs and schedule.",
+    meta: "Online · International",
+    eyebrow: "Personal guidance, wherever you are",
+    intro: "Students living abroad can practise directly with Suresh through individual online sessions planned around their goals, experience, time zone and available space.",
+    points: ["One-to-one online instruction", "Timings arranged after discussion", "Practice adapted to individual needs"],
+  },
+  {
+    no: "05",
+    title: "One-one counselling session",
+    slug: "one-one-counselling",
+    text: "A private conversation offering personal guidance for greater clarity, balance and wellbeing.",
+    meta: "Private session",
+    eyebrow: "A private conversation",
+    intro: "A confidential one-to-one conversation for people seeking thoughtful guidance around personal wellbeing, clarity and balance in everyday life.",
+    points: ["A calm space to speak openly", "Individual attention and practical guidance", "Sessions arranged privately"],
+  },
+];
+
+export const programsSectionContent = {
+  eyebrow: "Ways to practise",
+  title: "A practice for",
+  emphasizedTitle: "every season.",
+};

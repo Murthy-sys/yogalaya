@@ -1,21 +1,20 @@
 import { Arrow } from "./Arrow";
+import { heroContent, heroReflections } from "../constants/heroConstants";
 
 export function Hero() {
   return <section className="hero" id="home">
     <div className="hero-copy" data-reveal>
-      <p className="eyebrow">A place for health & self transformation</p>
-      <p className="hero-compact-copy">Trusted yoga center in Anantapur for traditional yoga, pranayama, meditation, therapeutic yoga, workshops, and online yoga classes.</p>
-      <h1>Come home<br />to your <em>body.</em></h1>
+      <p className="eyebrow">{heroContent.eyebrow}</p>
+      <p className="hero-compact-copy">{heroContent.compactCopy}</p>
+      <h1>{heroContent.title}<br />{heroContent.titleLineTwo} <em>{heroContent.emphasizedTitle}</em></h1>
       <div className="hero-reflections" aria-label="Yoga reflections">
-        <p className="hero-reflection hero-reflection-temple">If your body is a temple, your breath <span role="img" aria-label="lungs">🫁</span> will be your god.</p>
-        <p className="hero-reflection hero-reflection-knowledge">Successful concentration is direct knowledge.</p>
-        <p className="hero-reflection hero-reflection-effort">Success is immediate where efforts are intense.</p>
+        {heroReflections.map(({ className, text }) => <p className={`hero-reflection ${className}`} key={className}>{text}</p>)}
       </div>
       <div className="hero-actions"><a className="primary-button" href="#contact">Begin your practice <Arrow /></a><a className="text-link" href="#programs">Explore programs</a></div>
     </div>
     <div className="hero-visual" data-reveal data-reveal-delay="1">
-      <img src="/assets/yoga-teacher-hero-transparent.png" alt="Yoga teacher seated in meditation" fetchPriority="high" decoding="async" />
-      <div className="hero-note"><span>01</span> Breath<br />Movement<br />Stillness</div>
+      <img src={heroContent.image} srcSet={heroContent.imageSrcSet} sizes={heroContent.imageSizes} width={heroContent.imageWidth} height={heroContent.imageHeight} alt={heroContent.imageAlt} fetchPriority="high" decoding="async" />
+      <div className="hero-note"><span>01</span>{heroContent.note.map((line) => <span className="hero-note-text" key={line}>{line}<br /></span>)}</div>
     </div>
     <a className="scroll-note" href="#programs">Scroll to discover</a>
   </section>;

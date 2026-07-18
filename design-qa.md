@@ -1,37 +1,44 @@
-# Design QA
+# Testimonial Page-Turn Design QA
 
-- Source visual truth: `https://www.ammalaa.com/` (public HTML, CSS, and frontend structure inspected on 2026-07-13), adapted with the supplied logo and original yoga-specific content.
-- Implementation: React application in `src/App.jsx` and `src/styles.css`.
-- Intended viewports: desktop 1440px wide; mobile 390 × 844.
-- State: public landing page; no authentication or sign-in changes.
-- Implementation screenshot path: unavailable — the required in-app browser capture surface was not exposed in this environment.
-- Full-view comparison evidence: blocked because a browser-rendered screenshot could not be captured.
-- Focused region comparison evidence: blocked for the same reason.
+- Source visual truth: `/Users/apple/Downloads/can_u_create_a_gif_for_this.mp4`
+- Extracted reference evidence: `/tmp/page-turn-contact.jpg`
+- Implementation target: local Yogalaya homepage testimonial section
+- Intended viewports: desktop and 390 × 844 mobile
+- State: featured first testimonial, next turn, and previous turn
 
-**Findings**
+## Full-view comparison evidence
 
-- [P2] Browser-rendered visual comparison unavailable
-  - Location: full landing page, desktop and mobile.
-  - Evidence: production build completes, local HTML and both image assets return HTTP 200, but no supported browser capture surface was available.
-  - Impact: responsive styling and interactions are implemented but could not receive the required screenshot-to-source visual review.
-  - Fix: open the running page in the supported in-app browser, capture desktop and 390 × 844 states, and compare against the reference composition.
+The source video was opened as sampled frames and confirms the required sequence: a single visible sheet lifts from its outer edge, develops a diagonal lower-corner curl, casts a moving shadow during the crossing phase, and settles flat. The local implementation could not be captured because no in-app or connected browser is available in this environment.
 
-**Verified without visual capture**
+## Focused-region comparison evidence
 
-- `npm run build` passes with no warnings.
-- Local Vite page responds successfully.
-- Supplied logo and generated hero asset both respond successfully.
-- Mobile menu, testimonial controls, enquiry success state, and anchored navigation are implemented.
-- No login, sign-in, registration, profile, or authentication code was added.
+Reference motion frames were inspected closely around the page edge and fold. A matching browser-rendered implementation frame could not be produced, so visual comparison remains blocked.
 
-**Implementation Checklist**
+## Findings
 
-- Capture desktop and mobile rendered screenshots.
-- Test mobile menu open/close, testimonial previous/next, and enquiry submission in-browser.
-- Check console errors and keyboard focus in-browser.
+- [P1] Browser-rendered motion cannot be visually verified
+  - Location: testimonial next/previous page turn.
+  - Evidence: source frames are available, but the browser runtime reports no available browser.
+  - Impact: timing, fold curvature, and shadow placement cannot receive a final visual fidelity pass.
+  - Fix: open the local prototype in an available browser and capture the resting, midpoint-forward, and midpoint-backward states at desktop and mobile widths.
 
-**Follow-up Polish**
+## Required fidelity surfaces
 
-- Revisit exact logo crop at small mobile widths after visual capture.
+- Fonts and typography: code uses the existing Marcellus and DM Sans system; browser rendering not captured.
+- Spacing and layout rhythm: single-page responsive CSS implemented; visual confirmation blocked.
+- Colors and visual tokens: existing paper, ink, teal, and gold tokens preserved.
+- Image quality and asset fidelity: no new image assets are used in this component.
+- Copy and content: existing testimonials are preserved; the featured review remains first.
+
+## Comparison history
+
+- Initial implementation replaces the multi-page/directory presentation with one testimonial sheet and mirrored directional turns. No browser-rendered iteration was possible.
+
+## Implementation checklist
+
+- Capture desktop and mobile resting states.
+- Trigger and capture next-page midpoint.
+- Trigger and capture previous-page midpoint.
+- Check console errors and reduced-motion behavior.
 
 final result: blocked

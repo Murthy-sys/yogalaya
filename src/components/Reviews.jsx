@@ -1,12 +1,85 @@
+import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./Arrow";
+import { reviewsSectionContent } from "../constants/testimonialConstants";
 
-export function Reviews({ testimonials, testimonial, expanded, dragging, dragOffset, onSelect, onToggleExpanded, onTouchStart, onTouchMove, onTouchEnd, onTouchCancel, justdialReviewsUrl }) {
-  const previous = () => onSelect(testimonial - 1);
-  const next = () => onSelect(testimonial + 1);
+export function Reviews({ testimonials, testimonial, expanded, dragging, dragOffset, onSelect, onToggleExpanded, onTouchStart, onTouchMove, onTouchCancel, justdialReviewsUrl }) {
+  const [visibleIndex, setVisibleIndex] = useState(testimonial);
+  const [turn, setTurn] = useState(null);
+  const timers = useRef([]);
+  const activeReview = testimonials[visibleIndex];
+
+  useEffect(() => () => timers.current.forEach(window.clearTimeout), []);
+  useEffect(() => {
+    if (!turn && testimonial !== visibleIndex) setVisibleIndex(testimonial);
+  }, [testimonial, turn, visibleIndex]);
+
+  const closeExpandedReview = () => {
+    if (expanded) onToggleExpanded();
+  };
+
+  const requestPage = (index) => {
+    if (turn || index === visibleIndex || index < 0 || index >= testimonials.length) return;
+    const direction = index < visibleIndex ? "backward" : "forward";
+    setTurn({ direction, from: visibleIndex, to: index });
+    closeExpandedReview();
+    timers.current.push(window.setTimeout(() => {
+      setVisibleIndex(index);
+      onSelect(index);
+    }, 620));
+    timers.current.push(window.setTimeout(() => setTurn(null), 1320));
+  };
+
+  const handleTouchEnd = () => {
+    const destination = dragOffset > 46 ? visibleIndex - 1 : dragOffset < -46 ? visibleIndex + 1 : visibleIndex;
+    onTouchCancel();
+    if (destination !== visibleIndex) requestPage(destination);
+  };
+
+  const outgoingReview = turn ? testimonials[turn.from] : activeReview;
+  const incomingReview = turn ? testimonials[turn.to] : activeReview;
+
+  const reviewContent = (review, isInteractive = false) => <>
+    <div className="paper-review-top"><span>{String(testimonials.indexOf(review) + 1).padStart(2, "0")}</span>{review.featured && <small>Featured review</small>}</div>
+    <span className="paper-review-mark" aria-hidden="true">“</span>
+    <blockquote className={isInteractive && expanded ? "is-expanded" : "is-clamped"}>{review.quote}</blockquote>
+    {isInteractive && <button className="paper-review-more" type="button" onClick={onToggleExpanded} aria-expanded={expanded}>{expanded ? "Show less" : "Read full review"}</button>}
+    <div className="paper-review-author"><strong>{review.name}</strong></div>
+  </>;
+
   return <section className="reviews" id="reviews" data-reveal>
-    <div className="reviews-heading"><p className="eyebrow">Words from our community</p><h2>Practice,<br /><em>in their words.</em></h2><p>Reflections from students who have made Yogalaya part of their everyday lives.</p></div>
-    <div className="review-stage">{testimonials[testimonial].featured && <span className="featured-review-label">Featured review</span>}<span className="review-mark" aria-hidden="true">“</span><blockquote className={expanded ? "is-expanded" : "is-clamped"} key={testimonial}>{testimonials[testimonial].quote}</blockquote><button className="review-read-more" type="button" onClick={onToggleExpanded} aria-expanded={expanded}>{expanded ? "Show less" : "Read full review"}</button><div className="review-person" key={`person-${testimonial}`}><strong>{testimonials[testimonial].name}</strong><span>{testimonials[testimonial].detail}</span></div><div className="review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div><div className="testimonial-controls"><button onClick={() => onSelect((testimonial - 1 + testimonials.length) % testimonials.length)} aria-label="Previous review">←</button><span>{String(testimonial + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span><button onClick={() => onSelect((testimonial + 1) % testimonials.length)} aria-label="Next review">→</button></div><a className="all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews <Arrow /></a></div>
-    <div className="review-directory" aria-label="Choose a review">{testimonials.map((review, index) => <button className={testimonial === index ? "is-active" : ""} onClick={() => onSelect(index)} key={review.name} aria-pressed={testimonial === index}><span>{String(index + 1).padStart(2, "0")}</span><strong>{review.name}</strong><small>{review.detail}</small></button>)}</div>
-    <div className="mobile-reviews" aria-label="Student reviews carousel"><div className="mobile-review-viewport" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} onTouchCancel={onTouchCancel}><div className={`mobile-review-track ${dragging ? "is-dragging" : ""}`} style={{ "--mobile-review-index": testimonial, "--mobile-review-drag": dragOffset }}>{testimonials.map((review, index) => { const active = testimonial === index; return <article className={`mobile-review-card ${active ? "is-active" : ""}`} style={{ "--review-distance": index - testimonial }} key={`mobile-${review.name}`} aria-hidden={!active}><div className="mobile-review-card-top"><span>{String(index + 1).padStart(2, "0")}</span>{review.featured && <small>Featured review</small>}</div><span className="mobile-review-mark" aria-hidden="true">“</span><blockquote className={active && expanded ? "is-expanded" : "is-clamped"}>{review.quote}</blockquote>{active && <button className="mobile-review-more" type="button" onClick={onToggleExpanded} aria-expanded={expanded}>{expanded ? "Show less" : "Read full review"}</button>}<footer className="mobile-review-author"><strong>{review.name}</strong><span>{review.detail}</span></footer></article>; })}</div></div><div className="mobile-review-controls"><button type="button" onClick={previous} disabled={testimonial === 0} aria-label="Previous review">←</button><div className="mobile-review-count"><strong>{String(testimonial + 1).padStart(2, "0")}</strong><span>/ {String(testimonials.length).padStart(2, "0")}</span></div><button type="button" onClick={next} disabled={testimonial === testimonials.length - 1} aria-label="Next review">→</button></div><div className="mobile-review-progress" aria-hidden="true"><span style={{ width: `${((testimonial + 1) / testimonials.length) * 100}%` }} /></div><a className="mobile-all-reviews-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews on Google <Arrow /></a></div>
+    <div className="reviews-heading">
+      <p className="eyebrow">{reviewsSectionContent.eyebrow}</p>
+      <h2>{reviewsSectionContent.title}<br /><em>{reviewsSectionContent.emphasizedTitle}</em></h2>
+      <p>{reviewsSectionContent.description}</p>
+      <a className="reviews-heading-link" href={justdialReviewsUrl} target="_blank" rel="noreferrer">See all reviews <Arrow /></a>
+    </div>
+
+    <div className="paper-testimonial-wrap">
+      <div
+        className={`paper-testimonial ${dragging ? "is-dragging" : ""}`}
+        aria-live="polite"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={onTouchCancel}
+      >
+        <article className="paper-review-page paper-review-current" style={{ "--paper-drag": `${dragOffset}px` }}>
+          {reviewContent(activeReview, true)}
+        </article>
+
+        {turn && <div className={`paper-turn paper-turn-${turn.direction}`} aria-hidden="true">
+          <article className="paper-turn-face paper-turn-front">{reviewContent(outgoingReview)}</article>
+          <article className="paper-turn-face paper-turn-back">{reviewContent(incomingReview)}</article>
+          <span className="paper-turn-highlight" />
+        </div>}
+
+        <span className={`paper-cast-shadow ${turn ? `is-active is-${turn.direction}` : ""}`} aria-hidden="true" />
+      </div>
+
+      <div className="paper-review-controls">
+        <button type="button" onClick={() => requestPage(visibleIndex - 1)} disabled={visibleIndex === 0 || Boolean(turn)} aria-label="Previous testimonial"><span aria-hidden="true">←</span></button>
+        <button type="button" onClick={() => requestPage(visibleIndex + 1)} disabled={visibleIndex === testimonials.length - 1 || Boolean(turn)} aria-label="Next testimonial"><span aria-hidden="true">→</span></button>
+      </div>
+    </div>
   </section>;
 }

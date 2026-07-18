@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Arrow } from "./Arrow";
+import { locationContent } from "../constants/locationConstants";
 
 export function Location() {
   const mapContainerRef = useRef(null);
@@ -17,7 +18,7 @@ export function Location() {
       ]);
       if (disposed || !mapContainerRef.current) return;
 
-      const coordinates = [77.5895235, 14.6724758];
+      const coordinates = locationContent.coordinates;
       map = new maplibregl.Map({
         container: mapContainerRef.current,
         style: "https://tiles.openfreemap.org/styles/liberty",
@@ -42,17 +43,17 @@ export function Location() {
 
   return <section className="location" id="location">
     <div className="location-map" data-reveal>
-      <div className="location-map-header"><span>Ramnagar · Anantapur</span><span>Verified studio location</span></div>
+      <div className="location-map-header"><span>{locationContent.region}</span><span>{locationContent.verification}</span></div>
       <div className="location-map-canvas">
         <div ref={mapContainerRef} className="location-vector-map" role="region" aria-label="Interactive map showing Suresh's Yogalaya in Ramnagar, Anantapur" />
         <div className="location-map-label"><strong>Suresh’s Yogalaya</strong><span>Opposite MeeSeva office</span></div>
       </div>
     </div>
     <div className="location-copy" data-reveal data-reveal-delay="1">
-      <p className="eyebrow">Visit the Yogalaya</p>
-      <h2>Find your way<br /><em>to practice.</em></h2>
-      <div className="location-address"><span>Studio address</span><p>MeeSeva Road, Ramnagar<br />Opposite MeeSeva office<br />Anantapur, Andhra Pradesh 515004</p></div>
-      <a className="primary-button" href="https://maps.app.goo.gl/3gdoCaoVG5oW6FWSA?g_st=awb" target="_blank" rel="noreferrer">Open in Google Maps <Arrow /></a>
+      <p className="eyebrow">{locationContent.eyebrow}</p>
+      <h2>{locationContent.title}<br /><em>{locationContent.emphasizedTitle}</em></h2>
+      <div className="location-address"><span>Studio address</span><p>{locationContent.address.map((line) => <span key={line}>{line}</span>)}</p></div>
+      <a className="primary-button" href={locationContent.directionsUrl} target="_blank" rel="noreferrer">Open in Google Maps <Arrow /></a>
     </div>
   </section>;
 }

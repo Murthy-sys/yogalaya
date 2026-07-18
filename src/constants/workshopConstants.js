@@ -1,0 +1,30 @@
+export const workshops = [
+  "Yoga for Weight Management",
+  "Yoga for Mental Balance",
+  "Yoga for Life Management",
+  "Yoga for Stress Management",
+  "Yoga for Relationship Management",
+  "Yoga for Right Parenting",
+  "Yoga for Psychosomatic Issues",
+  "Yoga for Breath Management",
+  "Yoga for Emotional Stability",
+  "Meditation",
+  "Workshop on Asana",
+  "Workshop on Pranayama",
+  "Workshop on Mental Focus",
+  "How to Control Mind and Thought Process",
+  "Cleansing Techniques / Kriyas",
+  "Alignment Issues",
+  "Purpose of Life",
+  "Pre-Preparation for Marriage",
+  "How to Handle Life After Retirement",
+  "Yoga for Spinal Issues",
+];
+
+export const workshopsSectionContent = {
+  eyebrow: "Focused practice",
+  title: "Workshops to go",
+  emphasizedTitle: "deeper.",
+  description: "Small, attentive sessions that create space to explore a practice beyond the rhythm of a regular class.",
+  linkLabel: "Ask about upcoming dates",
+};
