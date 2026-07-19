@@ -3,13 +3,15 @@ import { Arrow } from "./Arrow";
 import { locationContent } from "../constants/locationConstants";
 
 export function Location() {
+  const sectionRef = useRef(null);
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    if (!mapContainerRef.current) return undefined;
+    if (!sectionRef.current || !mapContainerRef.current) return undefined;
 
     let map;
     let disposed = false;
+    let observer;
 
     async function initialiseMap() {
       const [{ default: maplibregl }] = await Promise.all([
@@ -34,14 +36,25 @@ export function Location() {
       new maplibregl.Marker({ color: "#d59a43", scale: 1.08 }).setLngLat(coordinates).addTo(map);
     }
 
-    initialiseMap();
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        initialiseMap();
+      }, { rootMargin: "600px 0px" });
+      observer.observe(sectionRef.current);
+    } else {
+      initialiseMap();
+    }
+
     return () => {
       disposed = true;
+      observer?.disconnect();
       map?.remove();
     };
   }, []);
 
-  return <section className="location" id="location">
+  return <section ref={sectionRef} className="location" id="location">
     <div className="location-map" data-reveal>
       <div className="location-map-header"><span>{locationContent.region}</span><span>{locationContent.verification}</span></div>
       <div className="location-map-canvas">
