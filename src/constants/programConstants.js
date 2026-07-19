@@ -18,7 +18,7 @@ export const programs = [
     eyebrow: "Practise together",
     // intro: "Join Suresh in person at the Ramnagar studio for clear demonstrations, thoughtful corrections and a consistent practice shaped around the students in the room.",
     detailSection: {
-      title: "Offline and Online Classes",
+      title: "Offline and Online Classes (for Adults)",
       paragraphs: [
         "Regular yoga practice plays a vital role in enhancing physical health, mental well-being, and overall quality of life.",
         "The presence of an experienced teacher and the positive energy of the practice space create an ideal environment for deeper Sadhana, accelerating personal growth and inner transformation.",

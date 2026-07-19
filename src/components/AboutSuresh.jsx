@@ -81,6 +81,10 @@ export function AboutSuresh() {
               <div className="practice-photo-frame"><img src="/assets/suresh-practice-open-sky-900.webp" alt="Suresh standing beneath an open sky with his arms extended" loading="lazy" decoding="async" /></div>
               <figcaption><span>03</span><p>Openness and ease</p></figcaption>
             </figure>
+            <figure className="practice-photo practice-photo-grounded" data-reveal style={{ "--reveal-index": 3 }}>
+              <div className="practice-photo-frame"><img src="/assets/suresh-practice-grounded-1019.jpg" width="1019" height="1543" alt="Suresh holding a grounded seated yoga posture during his early personal practice" loading="lazy" decoding="async" /></div>
+              <figcaption><span>04</span><p>Grounded strength</p></figcaption>
+            </figure>
           </div>
         </section>
       </main>
