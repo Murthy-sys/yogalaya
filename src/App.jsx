@@ -186,7 +186,7 @@ export function App() {
 
         <Faq faqs={faqs} openFaq={openFaq} onToggle={(index) => setOpenFaq(openFaq === index ? -1 : index)} />
 
-        <Contact programs={programs} workshops={workshops} submitted={submitted} onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} onReset={() => setSubmitted(false)} />
+        <Contact programs={programs} workshops={workshops} submitted={submitted} onSubmit={() => setSubmitted(true)} onReset={() => setSubmitted(false)} />
 
         <Location />
       </main>
