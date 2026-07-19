@@ -11,7 +11,7 @@ export const programs = [
   // },
   {
     no: "01",
-    title: "Online and Offline classes",
+    title: "Online and Offline classes (for Adults)",
     slug: "offline-classes",
     text: "In-person yoga sessions with attentive guidance at Suresh’s Yogalaya in Ramnagar, Anantapur.",
     meta: "At the Yogalaya",
